@@ -71,6 +71,9 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a></li>
                 </ul>
             </div>
+            <div class="lang-wrapper">
+                <div id="google_translate_element"></div>
+            </div>
         </div>
     </nav>
     <!-- END Navigation -->
@@ -93,19 +96,19 @@
 
     <div id="intro">
         <div class="row scroll-float">
-            <h2>RETREATS • ECSTATIC DANCE • WORKSHOPS</h2>
+            <h2>Retreats   •   Ecstatic Dance   •   Workshops</h2>
         </div>
     </div>
 
     <div id="reviews" class="section wb parallaxie" style="background: url('uploads/cover02.jpg')">
         <div class="container">
             <div class="section-title text-center scroll-float">
-                <p1>Herzlich willkommen bei CURA CAJOI der Ort wo Du in Deine Kraft kommst.
+                <p1>Herzlich willkommen bei CURA CAJOI der Ort wo Du in Deine Kraft kommst.<br>
                     In Kürze werden wir hier Einzelretreats anbieten, das Team ist noch am vorbereiten, bald gibt es mehr Informationen.</p1>
-            </div>
-            <div class="scroll-float " >
-                <p2>Die Termine für`s Ecstatic Dance und den Vorträgen / Workshops kannst Du schon auf unserem Kalender sehen.
-                    Der Shop mit inspirierenden Büchern und tollen T-Shirts ist schon online!</p2>
+                    <br>
+                    <br>
+                    <p2>Die Termine für`s Ecstatic Dance und den Vorträgen / Workshops kannst Du schon auf unserem Kalender sehen.
+                        Der Shop mit inspirierenden Büchern und tollen T-Shirts ist schon online!</p2> 
             </div>
         </div>
     </div>
@@ -241,19 +244,19 @@
                         
                         <form id="contactForm" action="mailto:nursofeaiwani@gmail.com" method="POST" enctype="text/plain">
                             <div class="form-group">
-                                <p>First Name</p>
+                                <p2>First Name</p2>
                                 <input class="form-control" name="firstName" type="text" required>
                             </div>
                             <div class="form-group">
-                                <p>Last Name</p>
+                                <p2>Last Name</p2>
                                 <input class="form-control" name="lastName" type="text" required>
                             </div>
                             <div class="form-group">
-                                <p>Email</p>
+                                <p2>Email</p2>
                                 <input class="form-control" name="email" type="email" required>
                             </div>
                             <div class="form-group">
-                                <p>Message</p>
+                                <p2>Leave Us a Message</p2>
                                 <textarea class="form-control" name="message" required></textarea>
                             </div>
                             <div class="col-lg-12">
@@ -273,8 +276,12 @@
 
     <!-- Footer -->
     <div class="copyrights">
-                    <p class="footer-company-name">CURA CAJOI © 2026</p>
+        <div class="footer-left">
+            <p class="footer-company-name">CURA CAJOI © 2026</p>
+        </div>
     </div>
+
+    
 
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius">
@@ -349,7 +356,7 @@
 				.then(res => res.json())
 				.then(data => {
 					if (!data.items || data.items.length === 0) {
-						container.innerHTML = `<p class="text-center">No upcoming events found.</p>`;
+						container.innerHTML = `<p class="section-title text-center">No upcoming events found.</p>`;
 						return;
 					}
 		
@@ -404,6 +411,8 @@ updateParallax();
         'images/floating01.png',
         'images/floating02.png',
         'images/floating03.png',
+        'images/floating01.png',
+        'images/floating02.png'
     ];
     
     let side = 'left'; // start side
@@ -522,7 +531,27 @@ scrollElements.forEach(el => observer.observe(el));
         window.scrollTo(0, 0); 
     });
     </script>
+
+<script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,it,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+    </script>
     
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <script>
+        document.addEventListener("click", function () {
+          document.body.style.overflow = "auto";
+        });
+        </script>
+
+
 </body>
 
 </html>
