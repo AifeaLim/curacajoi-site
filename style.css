@@ -33,9 +33,10 @@
 -------------------------------------------------------------------*/
 
 body {
-    color: #999999;
-    font-family: 'Cormorant Garamond', sans-serif;
+    color: #000000;
+    font-family: 'AvenirLight', sans-serif;
     line-height: 1.80857;
+    font-size: 12px;
 }
 
 html, body{
@@ -144,7 +145,6 @@ p1 {
     font-style: italic;
     font-optical-sizing: auto;
     position: relative;
-    padding: 0 0 10px 0;
     line-height: 120% !important;
     color: #ffffff;
     margin: 0;
@@ -156,12 +156,12 @@ p1 {
 p2 {
     font-family: 'AvenirLight', sans-serif;
     letter-spacing: 0;
-    font-weight: 100;
+    font-weight: 1.45em;
     font-optical-sizing: auto;
     position: relative;
     padding: 0 0 10px 0;
     line-height: 120% !important;
-    color: #ffffff;
+    color: #cfcfcf;
     margin: 0;
     font-size: 14px;
 
@@ -362,11 +362,13 @@ p2 {
     text-align: center;
     
     color: white;
-    height: 97px;
+    height: 60px;
 }
 
 #intro h2{
     font-size: 36px;
+    font-family: "Cormorant Garamond";
+    font-style: italic;
 }
 
 /* Carousel outer wrapper */
@@ -441,16 +443,17 @@ p2 {
 
 
 .content h3{
-    font-weight: 500;
+    font-weight: 200;
     font-size: 60px;
     line-height: 62px;
     margin: 0 0 0px;
     padding: 0;
     text-transform: none;
+    font-style: italic;
 }
 
 .content h2{
-    font-weight: 500;
+    font-weight: 100;
     font-size: 20px;
     margin: 0 0 25px;
     padding: 0;
@@ -608,18 +611,32 @@ p2 {
 }
 
 .event-card .btn {
-    margin-top: auto;
+    /* margin-top: auto;
     padding: 0.5rem 1rem;
     text-align: center;
     background-color: #007bff;
     color: #fff;
     border-radius: 0.25rem;
-    text-decoration: none;
+    text-decoration: none; */
     transition: background-color 0.3s;
+
+
+    position: relative;
+    color: #000000;
+    border-radius: 100px;
+    border: 1px solid rgb(0, 0, 0) !important;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+    font-family: "AvenirLight";
+    font-weight: 100;
+    font-size: 14px;
+
 }
 
 .event-card .btn:hover {
-    background-color: #0056b3;
+    background-color: #000000;
+    color: #fff;
 }
 
 
@@ -834,6 +851,14 @@ xclip
     
 }
 
+.section-title p {
+    color: #ffffff;
+    font-weight: 200;
+    line-height: 33px;
+    margin: 0;
+    
+}
+
 
 .section-title h1{
     color: #fff;
@@ -845,12 +870,13 @@ xclip
 }
 
 .section-title h3 {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 60px;
     line-height: 62px;
     margin: 0 0 25px;
     padding: 0;
     text-transform: none;
+    font-style: italic;
 }
 
 .section.colorsection p,
@@ -979,6 +1005,7 @@ xclip
 #reviews{
 	position: relative;
     height: 375px;
+    width:auto;
     text-align: center;
     display: flex;
 	justify-content: center; /* horizontal center */
@@ -999,6 +1026,7 @@ xclip
 #reviews .section-title p{
 	color: #ffffff;
 }
+
 
 
 #team{
@@ -1412,6 +1440,9 @@ select.mobile-device {
 	color: #ffffff;
     font-size: 20px;
    text-align: left;
+   font-style: italic;
+   font-family: "Cormorant Garamond";
+   font-weight: 400;
 }
 #contact .section-title h3{
 	font-size: 60px;
@@ -1538,13 +1569,38 @@ select.mobile-device {
 .copyrights {
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
     background-color: #ffffff;
-    box-sizing: border-box;
     width: 100%;
-    text-align: left;
-    padding: 30px 0px;
-    overflow: hidden;
-    text-align: center;
+    
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    flex-direction: row;     
+
+    gap: 20px;                 
+    padding: 20px;
+    box-sizing: border-box;
 }
+
+#google_translate_element {
+    transform: scale(0.9);
+    transform-origin: center;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+iframe.goog-te-menu-frame {
+    position: fixed !important;
+}
+
+
+
 
 
 /* Footer left */
@@ -1570,10 +1626,11 @@ select.mobile-device {
 
 .footer-distributed .footer-company-name {
     font-weight: 300;
-    font-size: 10px;
+    font-size: 12px;
     margin: 0 10px;
     color: #666;
     padding: 0;
+    font-family: "AvenirLight";
 }
 
 
