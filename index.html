@@ -1,355 +1,502 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon</title>
 
-    <!-- Title -->
-    <title>CURA CAJOI</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" href="uploads/logo.png">
+<style>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+    font-family: 'AvenirLight'; /* choose a name you want */
+    src: url('fonts/AvenirLight.ttf') format('truetype'); /* path to your font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+    body {
+        width: 100%;
+    min-height: 100vh;
+
+    background-color: black;
+    background-image: url('uploads/coming-soon.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: white;
+    position: relative;
+
+    text-align: center; 
+    }
+
+    /* Dark overlay */
+    body::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0);
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 2;
+        margin-top: 1400px;
+        margin-bottom: 0px;
+    }
+
+
+    h1 {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        letter-spacing: 0px;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 100;
+        font-style: italic;
+        font-optical-sizing: auto;
+        position: relative;
+        color: #ffffff;
+    }
+
+    p{
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 100;
+        font-style: italic;
+        font-optical-sizing: auto;
+        position: relative;
+        color: #ffffff;
+    }
+
+    p2 {
+    font-family: 'AvenirLight', sans-serif;
+    letter-spacing: 0;
+    font-weight: 1.45em;
+    font-optical-sizing: auto;
+    position: relative;
+    padding: 0 0 10px 0;
+    line-height: 120% !important;
+    color: #cfcfcf;
+    margin: 0;
+    font-size: 14px;
+
+
+}
+
+    p3 {
+        font-family: 'AvenirLight', sans-serif;
+        letter-spacing: 0;
+        font-weight: 1.45em;
+        font-optical-sizing: auto;
+        position: relative;
+        padding: 0 0 10px 0;
+        line-height: 120% !important;
+        color: #cfcfcf;
+        margin: 0;
+        font-size: 10px;
+
+
+    }
+
+    .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    padding-bottom: 40px;
+}
+
+.countdownSection {
+        margin-bottom: 200px;
+    }
+
+    .time-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .number {
+       
+        font-size: 160px;
+        font-family: 'AvenirLight', sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-optical-sizing: auto;
+        letter-spacing: 20px;
+        color: #ffffff;
+    }
+
+    .label {
+        font-size: 16px;
+        font-family: 'AvenirLight', sans-serif;
+        font-weight: 100;
+        font-style: normal;
+        font-optical-sizing: auto;
+        color: #c4c4c4;
+    }
+
+    .separator {
+        margin-top: -20px;
+    }
+
+
+   
+
+.contact_form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact_form .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        color: #000; /* input text color */
+    }
+
+
+
+.contact_form .form-control:focus {
+    border-bottom: 2px solid #ffffff; /* underline highlight on focus */
+    outline: none;
+    box-shadow: none;
+}
+
+.contact_form textarea {
+    color: #ffffff;
+    padding: 20px 25px !important;
+    height: 160px !important;
+}
+
+
+
+#contact .img {
+    margin-left: 6px;
+}
+
+#contact  .profile img {
+  margin-top: 0px;
+    width:200px;
+    height:auto;
+}
+
+
+
+#contact .section-title p2{
+    margin-top: 20px;
+	color: #ffffff;
+    font-size: 40px;
+   text-align: left;
+}
+
+#contact .section-title p{
+    margin-top: 20px;
+	color: #ffffff;
+    font-size: 20px;
+   text-align: left;
+   font-style: italic;
+   font-family: "Cormorant Garamond";
+   font-weight: 400;
+}
+#contact .section-title h3{
+	font-size: 60px;
+   text-align: left;
+}
+.contact_form textarea.form-control{
+	min-height: 225px;
+}
+
+.contact_form .form-control {
+    color: #ffffff; /* change this to any color you want */
+    font-size: 16px; /* optional */
+    font-weight: 400; /* optional */
+}
+
+
+.contact_form .btn-form {
+    display: block;          /* block so it fills parent */
+    width: 100%;             /* full width like input line */
+    padding: 10px 0;         /* vertical padding only */
+    font-size: 18px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 100px;
+    box-sizing: border-box;  /* include border in width */
+    text-align: center;
+    cursor: pointer;
+    font-family: "AvenirLight";
+}
+
+.contact_form .btn-form:hover {
+    display: block;          /* block so it fills parent */
+    width: 100%;             /* full width like input line */
+    padding: 10px 0;         /* vertical padding only */
+    font-size: 18px;
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 100px;
+    box-sizing: border-box;  /* include border in width */
+    text-align: center;
+    cursor: pointer;
+}
+
+.section {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+
+    .footer {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .footer a {
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid white;
+    }
+
+    .footer a:hover {
+        opacity: 0.7;
+    }
+
+
+    .left-align{
+        text-align: left ;
+    }
+
+
+/* <--mobile--> */
+
+   /* ===== MOBILE (≤ 402px) ===== */
+@media (max-width: 402px) {
+
+/* Countdown */
+.countdown {
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.number {
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+
+.label {
+    font-size: 12px;
+}
+
+.separator {
+    margin-top: -30px;
+}
+
+/* Layout */
+.content {
+    margin-bottom: 40px;
+    margin-top: -20px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 12px;
+}
+
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Contact section stacking */
+#contact .row {
+    flex-direction: column;
+}
+
+#contact .col-md-5,
+#contact .col-md-7 {
+    width: 100%;
+}
+
+#contact .section-title {
+    text-align: left;
+}
+
+#contact .section-title h1{
+font-weight: 100;
+font-size: 20px;
+}
+
+
+
+#contact .section-title p {
+    text-align: left;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+#contact .img {
+    text-align: left !important;
+    margin: 20px auto;
+    padding-left: 6px;
+    display: block;
+}
+
+#contact .profile img {
+    margin-left: 0px auto;
+    display: block;
+    margin-bottom: 12px;
+    width: 120px ;
+    text-align: left;
     
+    
+}
+
+body {
+    
+    background-size: contain;
+
+    }
+
+
+.countdownSection {
+    margin-top: 340px;
+    margin-bottom: 0px;
+    
+    
+}
+
+.countdown {
+    margin-top: -12px;
+    padding-bottom: 20px;
+}
+
+.contact_form .btn-form {       
+    font-size: 12px;
+}
+
+.contact_form .btn-form:hover {
+    font-size: 12px;
+}
+
+
+.contact_form textarea.form-control{
+	min-height: 100px;
+}
+
+.contact_form textarea {
+    color: #ffffff;
+    padding: 20px 25px !important;
+    height: 20px !important;
+}
+
+.contact_form .form-control {
+    font-size: 12px; 
+}
+
+}
+
+.contact_form {
+box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+padding: 0px 0px !important;
+}
+
+
+
+</style>
+
+
+
+
+
+
 </head>
 
-<body id="page-top">
+<body>
 
-    <!-- LOADER -->
-    <div id="preloader">
-        <div id="main-ld">
-            <div class="loader">
-                <span class="loader-inner">CURA CAJOI</span>
-            </div>
+<div class="content">
+    <div class="countdownSection">
+    <h1>COMING SOON</h1>
+    <div id="countdown" class="countdown">
+        <div class="time-box">
+            <div class="number" id="days">00</div>
+            <div class="label">Days</div>
+        </div>
+    
+        <div class="separator">:</div>
+    
+        <div class="time-box">
+            <div class="number" id="hours">00</div>
+            <div class="label">Hours</div>
+        </div>
+    
+        <div class="separator">:</div>
+    
+        <div class="time-box">
+            <div class="number" id="minutes">00</div>
+            <div class="label">Minutes</div>
+        </div>
+    
+        <div class="separator">:</div>
+    
+        <div class="time-box">
+            <div class="number" id="seconds">00</div>
+            <div class="label">Seconds</div>
         </div>
     </div>
-    <!-- END LOADER -->
+    <div>
+        <p>
+            Herzlich willkommen bei CURA CAJOI der Ort wo Du in Deine Kraft kommst.<br>
+In Kürze werden wir hier Einzelretreats anbieten, das Team ist noch am <br>vorbereiten, bald gibt es mehr Informationen.
+        </p>
 
-    
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container-fluid">
-            <!-- Logo LEFT -->
-            <a class="navbar-brand js-scroll-trigger" href="index.html">
-                <img src="uploads/logo.png" width= "120" height="20" alt="Logo">
-            </a>
-
-             <!-- Mobile Toggle Button -->
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-            <!-- Menu RIGHT -->
-            <div class="collapse navbar-collapse" id="navbarMenu">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="angebote.html">ANGEBOTE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#kalendar">KALENDER</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">KONTAKT</a></li>
-                </ul>
-
-                <div id="google_translate_element" class="ms-lg-3"></div>
-            </div>
-            
-        </div>
-    </nav>
-    <!-- END Navigation -->
-
-    <!-- Hero Banner -->
-
-    <div class="top">
-
-    </div>
-    <section id="home" class="main-banner parallaxie">
-        <div class="title">
-            <h1>
-                CURA CAJOI
-            </h1>
-            <h2 id="intro">Retreats   •   Ecstatic Dance   •   Workshops</h2>
-        </div>
-    </section>
-    
-    <div id="about" class="parallaxie ">
-            <div class="section-title text-center scroll-float">
-                <h4>Herzlich willkommen bei CURA CAJOI der Ort wo Du in Deine Kraft kommst.<br>
-                    In Kürze werden wir hier Einzelretreats anbieten, das Team ist noch am vorbereiten, bald gibt es mehr Informationen.</h4>
-                    <br>
-                    <p>Die Termine für`s Ecstatic Dance und den Vorträgen / Workshops kannst Du schon auf unserem Kalender sehen.<br>
-                        Der Shop mit inspirierenden Büchern und tollen T-Shirts ist schon online!</p> 
-            </div>
-    </div>
-
-    <div id="team" class="parallaxie">
-            <div class="section-title text-center scroll-float">
-                <h3>TEAM</h3>
-                <p>Das Team ist noch in der kreativen Phase, auch hier bald mehr!</p>
-
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="uploads/team02.jpeg" alt="Alexander">
-                    
-                        <h4><span class="bold-text">Alexander – Der Raumhalter</span></h4>
-                    
-                        <!-- Short Preview -->
-                        <p class="preview-text">
-                            Alexander ist der Raumhalter in unserem Team – er schafft den Rahmen für Deinen Prozess und begleitet Dich auf Deinem Weg.
-                            Ich bin Gastgeber und Hüter dieses Ortes, den ich über viele Jahre gemeinsam mit anderen aufgebaut habe – ein Raum, der heute Menschen in ihrer Entwicklung unterstützt.
-                            Mein eigener Weg war geprägt von Herausforderungen, innerer Suche und dem Wunsch zu verstehen, zu heilen und mich zu erinnern.
-                        </p>
-                    
-                        <button class="btn-primary" onclick="openPopup('teamPopup')">Read More</button>
-                    </div>
-                    <div class="team-member">
-                        <img src="uploads/team01.jpg" alt="Alexander">
-                    
-                        <h4><span class="bold-text">Andreas – Der Therapeut</span></h4>
-                    
-                        <!-- Short Preview -->
-                        <p class="preview-text">
-                            Andreas ist der Therapeut in unserem Team – er bringt Deinen Körper und Dein System in Balance.
-                            In meiner Arbeit habe ich immer wieder erlebt, wie eng körperliche, emotionale und mentale Prozesse miteinander verbunden sind. Wirkliche Veränderung entsteht dann, wenn wir den Menschen als Ganzes betrachten.
-
-                        </p>
-                    
-                        <button class="btn-primary" onclick="openPopup('teamPopup2')">Read More</button>
-                    </div>
-                    <div class="team-member">
-                        <img src="uploads/team03.png" alt="Alexander">
-                    
-                        <h4><span class="bold-text">Fabian – Der Transformator</span></h4>
-                    
-                        <!-- Short Preview -->
-                        <p class="preview-text">
-                            Fabian ist der Transformator in unserem Team – er begleitet Dich durch echte, tiefgreifende Veränderung.
-                            Ich weiß, wie es ist, ganz unten zu sein – orientierungslos und ohne Perspektive.
-                            Und ich weiß auch, wie es sich anfühlt, Erfolg zu haben und ein Leben im Überfluss zu führen.
-                            Schmerz, Rückschläge und extreme Erfahrungen gehören genauso zu meinem Weg wie die Suche nach Sinn.
-                            Doch ich habe auch erfahren, was geschieht, wenn man beginnt, seinem Herzen zu folgen – und dass es Dinge gibt, die einem niemand mehr nehmen kann, wenn man sie einmal wirklich gefunden hat.
-                        </p>
-                                                
-                        <button class="btn-primary" onclick="openPopup('teamPopup3')">Read More</button>
-                    </div> 
-            </div>
-            </div>
-    </div>
-
-    <div id="teamPopup" class="popup-overlay">
-        <div class="popup-content">
-    
-            <!-- Close -->
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div class="popup-image">
-                <img src="uploads/team02.jpeg" alt="Alexander">
-            </div>
-    
-            <div class="popup-text">
-                <h2><span class="bold-text">Alexander – Der Raumhalter</span></h2>
-    
-                <p>
-                    Alexander ist der Raumhalter in unserem Team – er schafft den Rahmen für Deinen Prozess und begleitet Dich auf Deinem Weg.
-Ich bin Gastgeber und Hüter dieses Ortes, den ich über viele Jahre gemeinsam mit anderen aufgebaut habe – ein Raum, der heute Menschen in ihrer Entwicklung unterstützt.
-Mein eigener Weg war geprägt von Herausforderungen, innerer Suche und dem Wunsch zu verstehen, zu heilen und mich zu erinnern. Dabei habe ich mich intensiv mit persönlichen und auch frühen Prägungen auseinandergesetzt.
-Ursprünglich komme ich aus der Landschaftsarchitektur. Die Verbindung zwischen Mensch und Natur stand für mich schon immer im Mittelpunkt – und die Frage, wie wir wieder in Balance mit unserer Umgebung kommen können. Dieses Wissen fließt heute in die Gestaltung und Erhaltung dieses Ortes ein.
-Später führte mich mein Weg in die Kunst, insbesondere in die Bildhauerei. Für mich ist sie ein Ausdruck innerer Prozesse – und zugleich ein kraftvoller Zugang, um Emotionen sichtbar und erfahrbar zu machen.
-Eine tiefe Verbindung habe ich seit jeher zu Pflanzen – ob als Heilpflanzen, Nahrung oder in ihrer reinen Präsenz. Sie sind für mich Lehrer und Begleiter zugleich.
-Auf meinem Weg hatte ich die Möglichkeit, von verschiedenen spirituellen Lehrern und Traditionen zu lernen – sowohl in unserem Kulturraum als auch darüber hinaus.
- Dabei begegnete ich unter anderem indigenen Völkern wie den Q’ero, Shipibo, Kogi und Lakota und durfte über längere Zeiträume Einblicke in ihre Denkweisen, Rituale und Heilansätze erhalten.
-Durch diese Begegnungen sowie durch begleitende Einweihungen und Schulungen ist ein tiefes, erfahrungsbasiertes Verständnis entstanden, das weit über theoretisches Wissen hinausgeht. Dieses Wissen ist für mich kein Konzept, sondern gelebte Praxis – und fließt achtsam und respektvoll in meine Arbeit ein.
-Meine Aufgabe sehe ich darin, einen bewussten, sicheren Raum zu halten, in dem Entwicklung geschehen kann – und Dich mit den passenden Impulsen und Werkzeugen auf Deinem Weg zu unterstützen.
-
-                </p>
-            </div>
-    
-        </div>
-    </div>
-
-    <div id="teamPopup2" class="popup-overlay">
-        <div class="popup-content">
-    
-            <!-- Close -->
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div class="popup-image">
-                <img src="uploads/team01.jpg" alt="Alexander">
-            </div>
-    
-            <div class="popup-text">
-                <h2><span class="bold-text">Andreas – Der Therapeut</span></h2>
-    
-                <p>
-                    Andreas ist der Therapeut in unserem Team – er bringt Deinen Körper und Dein System in Balance.
-In meiner Arbeit habe ich immer wieder erlebt, wie eng körperliche, emotionale und mentale Prozesse miteinander verbunden sind. Wirkliche Veränderung entsteht dann, wenn wir den Menschen als Ganzes betrachten.
-Als ausgebildeter Masseur, Osteopath, Cranio-Sacral-Therapeut und Ayurveda-Mediziner verbinde ich fundiertes Fachwissen mit einem tiefen Verständnis für natürliche Heilmethoden.
-Mein Ansatz ist ganzheitlich:
- Ich vereine moderne Erkenntnisse aus Anatomie und Physiologie mit bewährten, jahrtausendealten Heiltraditionen. Dabei steht für mich der Mensch als Einheit von Körper, Geist und Seele im Mittelpunkt.
-Ziel meiner Arbeit ist es, Dein inneres Gleichgewicht wiederherzustellen und die natürlichen Selbstheilungskräfte nachhaltig zu aktivieren.
-Schwerpunkte meiner Arbeit sind unter anderem:
-Osteopathie – zur Harmonisierung von Körperstrukturen und Funktionen
-Cranio-Sacral-Therapie – zur Lösung tiefer Spannungen im Nervensystem
-Ayurveda – individuell abgestimmte Behandlungen und Lebensweise
-Kräuter- und Pflanzenheilkunde – zur Unterstützung von Regeneration und Vitalität
-Ich begleite Dich dabei, wieder in Kontakt mit Deinem Körper zu kommen und Stabilität von innen heraus aufzubauen.
-                </p>
-            </div>
-    
-        </div>
-    </div>
-
-
-    <div id="teamPopup3" class="popup-overlay">
-        <div class="popup-content">
-    
-            <!-- Close -->
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <div class="popup-image">
-                <img src="uploads/team03.png" alt="Alexander">
-            </div>
-    
-            <div class="popup-text">
-                <h2><span class="bold-text">Fabian – Der Transformator</span></h2>
-    
-                <p>
-                    Fabian ist der Transformator in unserem Team – er begleitet Dich durch echte, tiefgreifende Veränderung.
-                    Ich weiß, wie es ist, ganz unten zu sein – orientierungslos und ohne Perspektive.
-                    Und ich weiß auch, wie es sich anfühlt, Erfolg zu haben und ein Leben im Überfluss zu führen.
-                    Schmerz, Rückschläge und extreme Erfahrungen gehören genauso zu meinem Weg wie die Suche nach Sinn.
-                    Doch ich habe auch erfahren, was geschieht, wenn man beginnt, seinem Herzen zu folgen – und dass es Dinge gibt, die einem niemand mehr nehmen kann, wenn man sie einmal wirklich gefunden hat.
-                    Was ich weitergeben möchte, ist genau diese Erfahrung:
-                    Eine echte Kehrtwende ist möglich. Für jeden.
-                    Ich habe meinen Weg aus einer jahrzehntelangen Drogenabhängigkeit aus eigener Kraft gefunden und mir Schritt für Schritt ein neues Leben aufgebaut – etwas, das ich selbst lange für unmöglich gehalten hätte.
-                    Heute arbeite ich mit Methoden, die mich auf diesem Weg unterstützt haben, wie zum Beispiel:
-                    Eisbäder
-                    Atemtechniken
-                    Meditationen
-                    Feuerzeremonien zum Sonnenaufgang
-                    Bewusste Zeit in der Natur und mit sich selbst
-                    Mein Ziel ist es, Dich dabei zu unterstützen, wieder bei Dir selbst anzukommen, Deine eigene Kraft zu spüren und Dein Leben bewusst neu auszurichten.
-
- </p>
-            </div>
-    
-        </div>
-    </div>
-
-    <div id="angebote"  class="slider">
-        <div class="slider-track">
-      
-          <div class="slide">
-            <div class="parallaxieCarousel" style="background-image: url('uploads/slide2.png');"></div>
-            <div class=" content">
-              <h3>ANGEBOTE</h3>
-              <h2>Einzelretreats</h2>
-              <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
-              </div>
-              <br>
-              <a href="#angebote" class=" btn-primary">Coming Soon</a>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="parallaxieCarousel" style="background-image: url('uploads/carousel03.jpg');"></div>
-            <div class="content">
-              <h3>ANGEBOTE</h3>
-              <h2>Ecstatic Dance </h2>
-              <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
-              </div>
-              <br>
-              <a href="#angebote" class="btn-primary">Coming Soon</a>
-            </div>
-          </div>
-      
-          <div class="slide">
-            <div class="parallaxieCarousel" style="background-image: url('uploads/slide03.JPG');"></div>
-            <div class="content">
-              <h3>ANGEBOTE</h3>
-              <h2>Vorträge</h2>
-              <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
-              </div>
-              <br>
-              <a href="#angebote" class="btn-primary">Coming Soon</a>
-            </div>
-          </div>
-
-
-          <div class="slide">
-            <div class="parallaxieCarousel" style="background-image: url('uploads/angebote/unterkunft02.jpg');"></div>
-            <div class="content">
-              <h3>ANGEBOTE</h3>
-              <h2>Unterkunft</h2>
-              <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
-              </div>
-              <a href="#angebote" class="btn-primary">Coming Soon</a>
-            </div>
-          </div>
-      
-        </div>
-      
-        <!-- Controls -->
-        <button class="prev">‹</button>
-        <button class="next">›</button>
-      </div>
-
-
-
-
-
-
-<!-- Kalendar Section -->
-
-<div id="kalendar" class="parallaxie events">
-    <div class="section-title text-center scroll-float">
-        <h3>KALENDER</h3>
-        <div id="events-container"></div>
     </div>
 </div>
 
 
-
-
-
-	 <!-- Shop Section -->
-
-     <div id="shop" class="parallaxie shop" data-speed="0.1">
-        <div class="section-title text-center scroll-float">
-            <h3>SHOP</h3>
-            
-        </div>
-        <div class="container-fluid">
-            <div class="product-grid">
-    
-            </div>
-            <div class="seemore">
-                <a href="shop.html" class="btn-primary" >See More</a>
-            </div>
-            
-        </div>
-
-        <!-- Floating objects container -->
-        <!-- <div class="floating-objects"></div> -->
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="section db">
-        <div class="container">
+     <!-- Contact Section -->
+     
+        <div id=contact class="container py-5">
             
             <div class="row align-items-start">
                 
                 <!-- LEFT: Contact Info -->
                 <div class="col-md-5">
-                    <div class="section-title scroll-float">
-                        <h3>Kontakt</h3>
+                    <div class="section-title scroll-float left-align">
+                        <h1>KONTAKT</h1>
                         
                         <div class="img">
                             <img src="uploads/vector01.png" alt="Cover Image">
@@ -372,20 +519,20 @@ Ich begleite Dich dabei, wieder in Kontakt mit Deinem Körper zu kommen und Stab
                     <div class="contact_form">
                         <div id="message"></div>
                         
-                        <form id="contactForm">
-                            <div class="form-group">
+                        <form id="contactForm" action="mailto:nursofeaiwani@gmail.com" method="POST" enctype="text/plain">
+                            <div class="form-group left-align">
                                 <p2>First Name</p2>
                                 <input class="form-control" name="firstName" type="text" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group left-align">
                                 <p2>Last Name</p2>
                                 <input class="form-control" name="lastName" type="text" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group left-align">
                                 <p2>Email</p2>
                                 <input class="form-control" name="email" type="email" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group left-align">
                                 <p2>Leave Us a Message</p2>
                                 <textarea class="form-control" name="message" required></textarea>
                             </div>
@@ -400,424 +547,51 @@ Ich begleite Dich dabei, wieder in Kontakt mit Deinem Körper zu kommen und Stab
             </div>
     
         </div>
-    </div>
-
-
-
-    <!-- Footer -->
-    <div class="copyrights">
-        <div class="footer-left">
-            <p class="footer-company-name">CURA CAJOI © 2026</p>
-        </div>
-    </div>
-
-    
-    <a href="#" id="scroll-to-top" class="dmtop global-radius">
-        <div class="img">
-            <img src="uploads/vector02.png" alt="Cover Image" style="width:32px; height:20px;">
-        </div>
-    </a>
-
-
-    <meta name="author" content="Nur Sofea Iwani">
-    <!-- JS Files -->
-    <script src="js/all.js"></script>
-    <script src="js/jquery.mobile.customized.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/parallaxie.js"></script>
-    <script src="js/headline.js"></script>
-    <script src="js/jquery.appear.min.js"></script>
-    <script src="js/responsiveslides.min.js"></script>
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- iCal.js (optional if you use it) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
-
-    <!-- Google Calendar Events Script -->
-    <script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const calendarId = "3afb4833f3859d7d74a131d17567319b7fe7bdda6be731032909b5584604b09d@group.calendar.google.com";
-			const apiKey = "AIzaSyBqXZNp5689GlaUOh5APdmKdMTlxbGOhB0";
-			const now = new Date().toISOString();
-			const container = document.getElementById("events-container");
-		
-			// Helper to format date for ICS
-			function formatDateICS(date) {
-				const pad = n => n < 10 ? '0' + n : n;
-				return date.getUTCFullYear() +
-					   pad(date.getUTCMonth() + 1) +
-					   pad(date.getUTCDate()) + 'T' +
-					   pad(date.getUTCHours()) +
-					   pad(date.getUTCMinutes()) +
-					   pad(date.getUTCSeconds()) + 'Z';
-			}
-		
-			// Generate ICS file content
-			function generateICS(event) {
-				const start = new Date(event.start.dateTime || event.start.date);
-				const end = new Date(event.end.dateTime || event.end.date);
-				const icsContent = `
-		BEGIN:VCALENDAR
-		VERSION:2.0
-		PRODID:-//CURA CAJOI//EN
-		BEGIN:VEVENT
-		UID:${event.id}
-		DTSTAMP:${formatDateICS(new Date())}
-		DTSTART:${formatDateICS(start)}
-		DTEND:${formatDateICS(end)}
-		SUMMARY:${event.summary || "No Title"}
-		DESCRIPTION:${event.description || ""}
-		LOCATION:${event.location || ""}
-		END:VEVENT
-		END:VCALENDAR
-				`.trim();
-				const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-				return URL.createObjectURL(blob);
-			}
-		
-			fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${now}&orderBy=startTime&singleEvents=true`)
-				.then(res => res.json())
-				.then(data => {
-					if (!data.items || data.items.length === 0) {
-						container.innerHTML = `<p class="section-title text-center">No upcoming events found.</p>`;
-						return;
-					}
-		
-					data.items.sort((a, b) => new Date(a.start.dateTime || a.start.date) - new Date(b.start.dateTime || b.start.date));
-		
-					data.items.forEach(event => {
-						const startStr = new Date(event.start.dateTime || event.start.date)
-							.toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
-						const location = event.location || "No location";
-		
-						let imgSrc = "https://via.placeholder.com/400x200";
-						if (event.description) {
-							const imgMatch = event.description.match(/<img.*?src="(.*?)"/i);
-							if (imgMatch && imgMatch[1]) imgSrc = imgMatch[1];
-						}
-		
-						const icsURL = generateICS(event);
-		
-						const card = document.createElement("div");
-						card.className = "event-card";
-						card.innerHTML = `
-							
-							<div class="card-body">
-								<h3 class="card-title">${event.summary || "No title"}</h3>
-								<p class="card-text"><strong>Date:</strong> ${startStr}</p>
-								<p class="card-text"><strong>Location:</strong> ${location}</p>
-								<a href="${icsURL}" download="${event.summary || 'event'}.ics" class="btn">Add to Calendar</a>
-							</div>
-						`;
-						container.appendChild(card);
-					});
-				})
-				.catch(err => {
-					console.error("Error fetching events:", err);
-					container.innerHTML = `<p class="text-center text-danger">Failed to load events.</p>`;
-				});
-		});
-		</script>
-
-        
-	<script>
    
 
-// Start loop
-updateParallax();
-    </script>
+</div>
 
-<script>
-    const floatingContainer = document.querySelector('.floating-objects');
-    
-    const images = [
-        'images/floating01.png',
-        'images/floating02.png',
-        'images/floating03.png',
-        'images/floating01.png',
-        'images/floating02.png'
-    ];
-    
-    let side = 'left'; // start side
-    
-    function floatImage() {
-        const img = document.createElement('img');
-        img.classList.add('floating-object');
-    
-        // Pick random image
-        img.src = images[Math.floor(Math.random() * images.length)];
-    
-        // Alternate left/right
-        img.style.left = side === 'left' ? '10%' : '80%';
-        side = side === 'left' ? 'right' : 'left';
-    
-        // Big size
-        const size = 240 + Math.random() * 40; // 240-280px
-        img.style.width = size + 'px';
-        img.style.height = size + 'px';
-    
-        // Normal speed
-        const duration = 3 + Math.random() * 0.2; // 6-8s
-        img.style.animationDuration = duration + 's';
-    
-        floatingContainer.appendChild(img);
-    
-        // Start next image halfway through current animation
-        setTimeout(() => {
-            floatImage();
-        }, (duration * 1000) / 2);
-    
-        // Remove image after full animation
-        setTimeout(() => {
-            img.remove();
-        }, duration * 1000);
-    }
-    
-    // Start the loop
-    floatImage();
-    </script>
-
-    <script>
-        const scrollElements = document.querySelectorAll('.scroll-float');
-
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // animate in
-            } else {
-                entry.target.classList.remove('visible'); // optional: animate out
-            }
-        });
-    },
-    {
-        threshold: 0.1 // trigger when 10% of the element is visible
-    }
-);
-
-scrollElements.forEach(el => observer.observe(el));
-    </script>
-
-
-<script>
-    const track = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide'); // only declare once
-    
-    let index = 0;
-    
-    document.querySelector('.next').addEventListener('click', () => {
-        nextSlide();
-    });
-    
-    document.querySelector('.prev').addEventListener('click', () => {
-        prevSlide();
-    });
-    
-    function nextSlide() {
-        index++;
-        if (index >= slides.length) index = 0;
-        updateSlide();
-    }
-    
-    function prevSlide() {
-        index--;
-        if (index < 0) index = slides.length - 1;
-        updateSlide();
-    }
-    
-    function updateSlide() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-    }
-    
-    // Auto-swipe every 4 seconds
-    setInterval(nextSlide, 4000);
-    
-    // Parallax effect
-    function parallaxSliderEffect() {
-        slides.forEach(slide => {
-            const rect = slide.getBoundingClientRect();
-            const speed = 0.1;
-            const yPos = rect.top * speed;
-            const bg = slide.querySelector('.parallaxieCarousel');
-            if (bg) {
-                bg.style.transform = `translateY(${yPos}px)`;
-            }
-        });
-    }
-    
-    // Call on scroll
-    window.addEventListener('scroll', parallaxSliderEffect);
-    </script>
-
-<script>
-    window.addEventListener('load', () => {
-        window.scrollTo(0, 0); 
-    });
-    </script>
-
-<script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'de',
-        includedLanguages: 'en,it,de',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-    </script>
-    
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-    <script>
-        document.addEventListener("click", function () {
-          document.body.style.overflow = "auto";
-        });
-        </script>
-
-
-<script>
-    function openPopup(popupId) {
-        document.getElementById(popupId).style.display = "flex";
-    }
-    
-    function closePopup() {
-        document.querySelectorAll(".popup-overlay").forEach(popup => {
-            popup.style.display = "none";
-        });
-    }
-    </script>
-
-<script>
-    const slider = document.querySelector('.product-grid');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener('mouseleave', () => isDown = false);
-slider.addEventListener('mouseup', () => isDown = false);
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2;
-    slider.scrollLeft = scrollLeft - walk;
-});
-</script>
-
-
-<script id="x92ksl">
-    const endpoint = "https://curacajoi.myshopify.com/api/2023-10/graphql.json";
-    
-    const query = `
-{
-  products(first: 6) {
-    edges {
-      node {
-        title
-        handle
-        images(first: 1) {
-          edges {
-            node {
-              url
-            }
-          }
-        }
-        variants(first: 1) {
-          edges {
-            node {
-              price {
-                amount
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`;
-    
-    fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": "48851bf08bbacab3f396747d5ace40eb"
-      },
-      body: JSON.stringify({ query })
-    })
-    .then(res => res.json())
-    .then(data => {
-      const products = data.data.products.edges;
-      const container = document.querySelector(".product-grid");
-    
-      container.innerHTML = ""; // clear existing
-    
-      const storeDomain = "https://curacajoi.myshopify.com";
-
-products.forEach(p => {
-  const product = p.node;
-
-  const productUrl = `${storeDomain}/products/${product.handle}`;
-
-  container.innerHTML += `
-    <div class="product-card">
-      <img src="${product.images.edges[0]?.node.url}" />
-      <br>
-      <br>
-      <h3>${product.title}</h3>
-      <p>CHF ${product.variants.edges[0]?.node.price.amount}</p>
-<br>
-      <a href="${productUrl}" target="_blank" class="btn-primary">
-        Buy
-      </a>
+<div class="footer">
+    <div class="footer-left">
+        <p3 class="footer-company-name">CURA CAJOI © 2026</p3>
     </div>
-  `;
-});
-    })
-    .catch(err => console.error(err));
-    </script>
+</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 <script>
-  emailjs.init("iHM9-gkh7vHbBxIMy");
-</script>
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    const launchDate = new Date("April 4, 2026 00:00:00").getTime();
     
-      emailjs.send("service_9mt9s0g", "template_pyssqnd", {
-        firstName: this.firstName.value,
-        lastName: this.lastName.value,
-        email: this.email.value,
-        message: this.message.value
-      })
-      .then(() => {
-        alert("Message sent successfully!");
-        this.reset();
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Failed to send message.");
-      });
-    });
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    
+    setInterval(() => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+    
+        if (distance < 0) {
+            document.getElementById("countdown").innerHTML = "We are live!";
+            return;
+        }
+    
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+    
+        daysEl.innerText = String(days).padStart(2, '0');
+        hoursEl.innerText = String(hours).padStart(2, '0');
+        minutesEl.innerText = String(minutes).padStart(2, '0');
+        secondsEl.innerText = String(seconds).padStart(2, '0');
+    
+    }, 1000);
     </script>
 
 
 </body>
-
 </html>
