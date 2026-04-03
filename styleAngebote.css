@@ -27,6 +27,7 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -71,7 +72,13 @@ body {
 
 
 
-
+.parallaxie,
+.parallaxieCarousel,
+.main-banner,
+.shop,
+#team {
+    background-position: center center !important;
+}
 
 #home::before,
 #dance::before,
@@ -249,6 +256,7 @@ font-size: 14px;
     border-radius: 40px;
 
     padding: 64px;
+    z-index: 10;
     
 
 }
@@ -340,7 +348,7 @@ font-size: 14px;
 .overlayThree {
     position: absolute;
     left: 100px;
-    top: 290vh; /* <-- you should control vertical position too */
+    top: 300vh; /* <-- you should control vertical position too */
     width: 200px;
     min-height: 313px;
     z-index: 5;
@@ -815,6 +823,7 @@ iframe.goog-te-menu-frame {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 
     width: 100%;
 
@@ -1132,6 +1141,7 @@ iframe.goog-te-menu-frame {
     font-size: 12px;
         
     }
+    
     .parallaxie,
     .parallaxieCarousel,
     .main-banner,
