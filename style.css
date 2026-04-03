@@ -1497,17 +1497,18 @@ margin-bottom: 20px;
             border-radius: 12px;
             padding: 20px;
             flex-direction: column;
+            gap: 20px;
           }
         
           .popup-image img {
-            width: 100%;
+            width: 20vh;
             height: auto;
             border-radius: 10px;
           }
         
           .popup-text {
-            margin-top: 15px;
             padding-left: 0px;
+            padding-top: 12px;
           }
         
           .popup-text h4 {
