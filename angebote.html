@@ -10,7 +10,8 @@
     <title>ANGEBOTE</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="uploads/logo.png">
+    <link rel="icon" type="image/png" href="/uploads/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -53,9 +54,9 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="angebote.html">ANGEBOTE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">KALENDER</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#kalendar">KALENDER</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">KONTAKT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">KONTAKT</a></li>
                 </ul>
 
                 <div id="google_translate_element" class="ms-lg-3"></div>
@@ -414,19 +415,63 @@
 <script src="js/custom.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
 <script>
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'de',
-        includedLanguages: 'en,it,de',
+        includedLanguages: 'de,en,it', // include German here
+        autoDisplay: false, // ❗ prevents auto popup/translation
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
     </script>
-
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
+
+    <script>
+        function forceGermanOption() {
+          const select = document.querySelector(".goog-te-combo");
+        
+          if (select) {
+            if (!select.querySelector("option[value='de']")) {
+              const option = document.createElement("option");
+              option.value = "de";
+              option.text = "Deutsch";
+              select.insertBefore(option, select.firstChild);
+            }
+          } else {
+            // keep trying until it exists
+            setTimeout(forceGermanOption, 500);
+          }
+        }
+        
+        document.addEventListener("DOMContentLoaded", forceGermanOption);
+        </script>
+
+<script>
+    function removeGoogleBar() {
+      const frame = document.querySelector(".goog-te-banner-frame");
+      if (frame) {
+        frame.style.display = "none";
+      }
+    
+      document.body.style.top = "0px";
+    }
+    
+    // run repeatedly because Google keeps re-injecting it
+    setInterval(removeGoogleBar, 500);
+    </script>
+
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          if (document.cookie.includes("googtrans")) {
+            document.cookie = "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+          }
+        });
+        </script>  
 
 
 <script>
@@ -732,6 +777,19 @@ scrollElements.forEach(el => observer.observe(el));
         if (e.target === this) {
             closeModal();
         }
+    });
+    </script>
+
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        const el = document.querySelector(window.location.hash);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth" });
+          }, 500); // delay lets other scripts finish
+        }
+      }
     });
     </script>
 
