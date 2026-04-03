@@ -1,0 +1,844 @@
+/*------------------------------------------------------------------
+    Version: 1.0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    IMPORT FONTS
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+    font-family: 'AvenirLight'; /* choose a name you want */
+    src: url('fonts/AvenirLight.ttf') format('truetype'); /* path to your font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*------------------------------------------------------------------
+    IMPORT FILES
+-------------------------------------------------------------------*/
+
+@import url(css/animate.css);
+@import url(css/responsiveslides.css);
+@import url(css/flaticon.css);
+
+/*------------------------------------------------------------------
+    SKELETON
+-------------------------------------------------------------------*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+.top{
+
+    background: url('uploads/shop/bg02.jpeg');
+    height:60px;
+}
+
+body {
+    color: #000000;
+    font-family: 'AvenirLight', sans-serif;
+    line-height: 1.80857;
+}
+
+#home, #shop {
+    position: relative;
+}
+
+
+
+
+
+
+.top::before, #home::before{
+    content: "";
+    position: absolute;
+    inset: 0; /* replaces top/left/width/height */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+#shop::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* replaces top/left/width/height */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+#home > *,
+#shop>*{
+    position: relative;
+    z-index: 1;
+}
+
+
+footer{
+    background-color: #000000;
+}
+
+
+.hero-wrapper {
+    position: relative;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;  
+}
+
+
+
+.hero-title{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;     /* center horizontally */
+    justify-content: center; /* center vertically inside itself */
+
+    text-align: center;
+    gap: 10px;
+
+
+}
+
+
+.hero-title h1{
+    font-size: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 1.1em;
+    color: #ffffff;
+    margin: 0;
+    margin-bottom: 60px;
+
+    z-index:1;
+}
+
+.section-title {
+    display: block;
+    position: relative;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 100;
+    font-size: 40px;
+    line-height: 1.2em;
+    margin: 0 0 25px;
+    padding: 0;
+    text-transform: none;
+    font-style: italic;
+    color: #ffffff;
+    font-family: "Cormorant Garamond";
+}
+
+h3 {
+    font-weight: 100;
+    font-size: 29px;
+    line-height: 1.4em;
+    padding: 0;
+    text-transform: none;
+    font-style: italic;
+    color: #ffffff;
+    font-family: "Cormorant Garamond";
+}
+
+h4 {
+    font-weight: 100;
+    font-size: 20px;
+    padding: 0;
+    text-transform: none;
+    font-style: italic;
+    color: #ffffff;
+    font-family: "Cormorant Garamond";
+    
+}
+
+h5 {
+    font-weight: 100;
+    font-size: 36px;
+    padding: 0;
+    text-transform: none;
+    color: #ffffff;
+    font-family: "Cormorant Garamond";
+    
+}
+
+p {
+    color: #ffffff;
+    font-weight: 100;
+    margin: 0;
+    font-family: 'AvenirLight', serif;
+letter-spacing: 0;
+position: relative;
+color: #ffffff;
+font-size: 14px;
+    
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.italic-bold {
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.scroll-float {
+    opacity: 0;               /* start hidden */
+    transform: translateY(30px); /* start slightly below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-float.visible {
+    opacity: 1;
+    transform: translateY(0); /* move to original position */
+}
+
+
+/*------------------------------------------------------------------
+    FOOTER
+-------------------------------------------------------------------*/
+
+
+.copyrights {
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    flex-direction: row;     
+
+    gap: 20px;                 
+    padding: 20px;
+    box-sizing: border-box;
+    background: #000000 !important;
+}
+
+
+
+.footer-company-name {
+color: #ffffff !important;
+text-align: center;
+justify-content: center;
+align-items: center;
+font-size: 10px;
+font-family: "AvenirLight";
+font-style: normal;
+margin-bottom: 20px;
+
+}
+
+
+#google_translate_element {
+    transform: scale(0.9);
+    transform-origin: center;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+iframe.goog-te-menu-frame {
+    position: fixed !important;
+}
+
+
+
+/*------------------------------------------------------------------
+    SHOP
+-------------------------------------------------------------------*/
+#shop .product-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border-top: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+    padding: 20px;
+    margin-bottom: 20px;
+    
+}
+
+#shop .product-featured{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border-top: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease;
+    border-radius: 20px;
+
+    padding: 60px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-right: -15px;
+margin-left: -15px;
+    
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-card {
+    display: grid;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+.shop-section {
+    padding: 80px 60px;
+    background: #8a8a8a;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image{
+    width: 100%;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .product-card .btn {
+    margin-top: auto; /* pushes button to bottom */
+    margin-bottom: 20px; /* spacing from bottom */
+  }
+
+.product-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+
+}
+
+.product-card p {
+    margin-bottom: 12px;
+
+}
+
+
+.price {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+  
+  /* image */
+  .product-image {
+    flex: 1;
+  }
+  
+  .product-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  /* content */
+  .product-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .product-content h3 {
+    margin-bottom: 15px;
+  }
+  
+  .product-content p {
+    margin-bottom: 10px;
+  }
+  
+
+
+
+/*------------------------------------------------------------------
+    HEADER
+-------------------------------------------------------------------*/
+
+#mainNav.navbar-light {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Horizontal menu */
+#mainNav .navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Space between items */
+#mainNav .nav-item {
+    margin-left: 25px;
+    align-self:auto;
+}
+
+#mainNav .navbar-brand {
+    margin-left: 25px;
+    align-self:self-end;
+}
+
+/* Menu link color */
+#mainNav .nav-link {
+    color: rgb(255, 255, 255);
+    font-family: 'AvenirLight', sans-serif; /* your custom font */
+    font-weight: 300; /* Light */
+    font-size: 16px;   /* 16px size */
+    letter-spacing: 0.05em; /* character spacing */
+    transition: color 0.3s ease;
+}
+
+#mainNav .nav-link:hover {
+    color: #595959;
+}
+
+
+/* Parallax background */
+.parallaxie {
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+
+    position: relative;
+
+    display: block; 
+}
+
+
+/*------------------------------------------------------------------
+    SCROLL TO TOP
+-------------------------------------------------------------------*/
+
+.dmtop.show {
+    bottom: 10px;
+}
+
+.dmtop {
+    background-color: #3C3D41;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    line-height: 47px;
+    position: fixed;
+    bottom: -100px;
+    border-radius: 3px;
+    right: 10px;
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff !important;
+    cursor: pointer;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+}
+
+.dmtop:hover{
+	background-color: #5757579e;
+}
+
+
+/*------------------------------------------------------------------
+    PRELOADER
+-------------------------------------------------------------------*/
+
+
+
+#preloader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #333333;
+    z-index: 11000;
+    position: fixed;
+    display: block
+}
+
+
+#main-ld {
+  width: 160px;
+  height: 190px;
+  overflow: hidden;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 60px);
+}
+
+.loader{
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    border-radius: 50%;
+    border-top: 5px solid #8299cd;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    margin: 30px auto;
+    -webkit-animation: 2s loading1 ease-in-out infinite;
+    animation: 2s loading1 ease-in-out infinite;
+}
+.loader:before,
+.loader:after{
+    content: "";
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+.loader:before{
+    border-top: 5px solid #db5c87;
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg)
+}
+.loader:after{
+    border-top: 5px solid #e45050;
+    -webkit-transform: rotate(240deg);
+    transform: rotate(240deg)
+}
+.loader .loader-inner{
+    display: block;
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    -webkit-animation: 2s loading2 linear infinite;
+    animation: 2s loading2 linear infinite;
+}
+@-webkit-keyframes loading1{
+    50% {
+        -webkit-transform: rotate(180deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+@keyframes loading1{
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+@-webkit-keyframes loading2{
+    50% {
+        -webkit-transform: rotate(-180deg)
+    }
+    100% {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+@keyframes loading2{
+    50% {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg)
+    }
+}
+
+/*------------------------------------------------------------------
+    BUTTONS
+-------------------------------------------------------------------*/
+
+
+.btn {
+    position: relative;
+    color: #fff;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    background: transparent;
+    overflow: hidden;
+    z-index: 1;
+    font-family: "AvenirLight";
+    font-weight: 100;
+    font-size: 14px;
+
+    padding: 6px 40px;
+    text-decoration: none !important;
+}
+
+
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 1);
+    border: 0px solid rgba(255, 255, 255, 0) !important;
+    color: #fff;
+}
+
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #ffffff00;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90vh;
+    height: auto;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*------------------------------------------------------------------
+    CONTACT
+-------------------------------------------------------------------*/
+
+
+
+.contact_form {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+}
+
+.contact_form .form-control {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        color: #000; /* input text color */
+    }
+
+
+
+.contact_form .form-control:focus {
+    border-bottom: 2px solid #ffffff; /* underline highlight on focus */
+    outline: none;
+    box-shadow: none;
+}
+
+.contact_form textarea {
+    color: #ffffff;
+    padding: 20px 25px !important;
+    height: 160px !important;
+}
+
+#contact {
+
+    background-color: #000;
+}
+
+#contact .img {
+    text-align: left;
+    margin-left: 12px;
+}
+
+#contact .profile img {
+  margin-top: 20px;
+    width:200px;
+    height:auto;
+    
+}
+
+
+#contact .section-title p2{
+    margin-top: 20px;
+	color: #ffffff;
+    font-size: 40px;
+   text-align: left;
+}
+
+#contact .section-title p{
+    margin-top: 20px;
+	color: #ffffff;
+    font-size: 20px;
+   text-align: left;
+   font-style: italic;
+   font-family: "Cormorant Garamond";
+   font-weight: 400;
+}
+#contact .section-title h3{
+	font-size: 60px;
+   text-align: left;
+}
+.contact_form textarea.form-control{
+	min-height: 225px;
+}
+
+.contact_form .form-control {
+    color: #ffffff; /* change this to any color you want */
+    font-size: 16px; /* optional */
+    font-weight: 400; /* optional */
+}
+
+
+/* MOBILE */
+@media  (max-width: 785px)  {
+    #mainNav .navbar-nav {
+        flex-direction: column !important;
+    }
+
+
+    body {
+    
+        background-size: contain;
+    
+        }
+
+    .main-banner{
+
+        background-size: contain;
+        max-height:fit-content ;
+        
+        }
+
+
+    .section {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 12px !important;
+        background-color: #ffffff;
+    }
+
+    .section-title{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .section-title p1{
+        font-size: 12px!important;
+    }
+
+    .section-title h3 {
+    font-size: 40px !important;
+    }    
+
+    .section-title p {
+        font-size: 16px !important;
+        }   
+
+    .parallaxie,
+    .parallaxieCarousel,
+    .main-banner,
+    .shop,
+    #team {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+    }
+
+    #shop{
+
+        max-width:100vh !important;
+
+    }
+
+    .footer-company-name {
+        font-size: 10px !important;
+        
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr; /* 1 card per row */
+            gap: 15px;
+            max-width: 95vh !important;
+            margin: 0px -50px;
+          }
+        
+          .product-card {
+            padding: 15px;
+          }
+        
+          .product-card img {
+            width: 100%;
+            height: auto;
+          }
+        
+          .product-card h3 {
+            font-size: 16px;
+          }
+        
+          .product-card p {
+            font-size: 14px;
+          }
+        
+          .product-card .btn {
+            margin-top: auto;
+            margin-bottom: 15px;
+            padding: 10px 16px;
+            font-size: 14px;
+          }
+        
+
+}
