@@ -259,33 +259,38 @@
     const endpoint = "https://curacajoi.myshopify.com/api/2023-10/graphql.json";
     
     const query = `
-{
-  products(first: 6) {
-    edges {
-      node {
-        title
-        handle
-        images(first: 1) {
-          edges {
-            node {
-              url
+        {
+        products(first: 50) {
+            pageInfo {
+            hasNextPage
+            endCursor
             }
-          }
-        }
-        variants(first: 1) {
-          edges {
+            edges {
+            cursor
             node {
-              price {
-                amount
-              }
+                title
+                handle
+                images(first: 1) {
+                edges {
+                    node {
+                    url
+                    }
+                }
+                }
+                variants(first: 1) {
+                edges {
+                    node {
+                    price {
+                        amount
+                    }
+                    }
+                }
+                }
             }
-          }
+            }
         }
-      }
-    }
-  }
-}
-`;
+        }
+        `;
     
     fetch(endpoint, {
       method: "POST",
@@ -326,6 +331,7 @@ products.forEach(p => {
     })
     .catch(err => console.error(err));
     </script>
+
 
 
 </body>
