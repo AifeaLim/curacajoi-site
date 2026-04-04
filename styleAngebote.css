@@ -82,7 +82,6 @@ body {
 
 #home::before,
 #dance::before,
-#zum::before,
 #workshops::before,
 #kalendar::before,
 #unterkunft::before {
@@ -122,24 +121,27 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 250px;
 }
 
 
 
 .hero-title{
-    width: 100%;
-    min-height: 100vh; /* instead of height */
-    
-    display: flex;
-    justify-content: center;   /* horizontal */
-    align-items: center;       /* vertical */
-
-    text-align: center;
     position: relative;
-    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 
 
 }
+
+.title-inner {
+    position: relative;
+    display: inline-block;
+}
+
 
 
 .hero-title h1{
@@ -150,7 +152,6 @@ footer{
     line-height: 1.1em;
     color: #ffffff;
     margin: 0;
-    margin-bottom: 200px;
 
     z-index:1;
 }
@@ -205,6 +206,17 @@ h5 {
     
 }
 
+h6 {
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 1.4em;
+    padding: 0;
+    text-transform: none;
+    font-style: italic;
+    color: #ffffff;
+    font-family: "Cormorant Garamond";
+}
+
 p {
     color: #ffffff;
     font-weight: 100;
@@ -243,6 +255,10 @@ font-size: 14px;
     width: 100%;
 }
 
+.outro{
+    padding-top: 40px;
+}
+
 #info {
 
     background: rgba(255,255,255,0.15);
@@ -254,6 +270,24 @@ font-size: 14px;
 
     transition: all 0.3s ease;
     border-radius: 40px;
+
+    padding: 64px;
+    z-index: 10;
+    
+
+}
+#zumInfo {
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border-top: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+    transition: all 0.3s ease;
+    border-radius: 40px;
+    margin-top: 24px;
 
     padding: 64px;
     z-index: 10;
@@ -388,20 +422,21 @@ font-size: 14px;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
-    background-color: #ffffff;
+    background: white;
 }
 
 /* TOP LINE */
 .line_vertical.atas {
-    top: 0;
-    height: calc(35%); /* adjust based on title size */
-    z-index: 10;
+    bottom: 100%; /* attach to top of text */
+    height: 80vh;
+    margin-bottom: 40px;
 }
 
 /* BOTTOM LINE */
 .line_vertical.bottom {
-    bottom: 0;
-    height: calc(55%);
+    top: 100%; /* attach to bottom of text */
+    height:55vh;
+    margin-top: 40px;
 }
 
 .between-line {
@@ -453,9 +488,6 @@ font-size: 14px;
     position: relative;
 }
 
-#unterkunft {
-    position: relative;
-}
 
 .unterkunftbetween-line {
     position: absolute;
@@ -568,7 +600,7 @@ padding-top:4px;
     background-color:  rgba(0, 0, 0, 0.298);
 }
 
-
+/* 
 .slider {
     position: relative;
     overflow: hidden;
@@ -577,7 +609,6 @@ padding-top:4px;
     padding: 20px 0;
 }
 
-/* Track (holds all slides in a row) */
 .slider-track {
     display: flex;
     width: max-content;
@@ -585,7 +616,6 @@ padding-top:4px;
     gap:12px;
 }
 
-/* Each slide */
 .slide {
     min-width: 40vh;
     height: 100%;
@@ -606,7 +636,6 @@ padding-top:4px;
     border-radius: 20px;
 }
 
-/* Image */
 .slide-inner img {
     min-width: 100%;
     height: 355px;
@@ -614,7 +643,6 @@ padding-top:4px;
     display: block;
 }
 
-/* Overlay */
 .slide-overlay {
     position: absolute;
     inset: 0;
@@ -623,8 +651,8 @@ padding-top:4px;
     display: flex;
     flex-direction: column;
 
-    justify-content: flex-end; /* bottom */
-    align-items: flex-start;   /* left */
+    justify-content: flex-end; 
+    align-items: flex-start;  
 
     color: #fff;
     opacity: 0;
@@ -634,11 +662,39 @@ padding-top:4px;
     padding: 20px;
 }
 
-/* Reveal on hover */
 .slide-inner:hover .slide-overlay {
     opacity: 1;
+} */
+
+
+
+.Unterkunft-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    width: 100vh;
+    padding-top: 40px;
+    z-index: 20;
 }
-/* Button */
+
+.Unterkunft-content img {
+    width: 100%;
+    height: 300px; /* control size */
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.Unterkunft-content h4 {
+    padding-top: 12px;
+}
+
+
+
+
+
+
 .btn-primary {
     display: inline-block;
     padding: 10px 20px;
@@ -653,7 +709,7 @@ padding-top:4px;
     color: #000;
 }
 
-/* Navigation buttons */
+
 .prev,
 .next {
     position: absolute;
@@ -715,6 +771,10 @@ padding-top:4px;
 #swiper {
     display: none;
   }
+
+  
+
+
   
 
 /*------------------------------------------------------------------
@@ -1021,6 +1081,25 @@ iframe.goog-te-menu-frame {
 
 /* MOBILE */
 @media  (max-width: 785px)  {
+
+
+    * {
+        box-sizing: border-box;
+    }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* prevents accidental horizontal scroll */
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+
     #mainNav .navbar-nav {
         flex-direction: column !important;
     }
@@ -1058,10 +1137,15 @@ iframe.goog-te-menu-frame {
             z-index: 0;
         }
 
-    #info,#dance, #home,#zum, #workshops, #kalendar, #swiper{
+    #info,#dance, #home,#zum, #workshops, #kalendar{
             padding: 40px;
             display: flex;
             flex-direction: column;           
+        
+        }
+
+        #unterkunft{
+            padding: 40px;       
         
         }
 
@@ -1163,7 +1247,7 @@ iframe.goog-te-menu-frame {
     #overlay {
         display: none;
         }
-
+/* 
         #unterkunft {
             display: none;
           }
@@ -1185,7 +1269,7 @@ iframe.goog-te-menu-frame {
           
           .swiper-slide-active {
             transform: scale(1);
-          }
+          } */
 
 
           #info{
@@ -1238,6 +1322,31 @@ iframe.goog-te-menu-frame {
 
 }   
 
+.Unterkunft-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+z-index: 20;
+}
+.Unterkunft-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ✅ centers image + text */
+    text-align: center;
+}
+
+.Unterkunft-content img {
+    width: 100%;              /* better than 35% for mobile readability */
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.Unterkunft-content h4{
+    text-align: center;
+}
 
 
 }
