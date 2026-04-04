@@ -657,10 +657,9 @@ font-size: 14px;
   
 .team-grid {
     display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
-  justify-content: center;
-  gap:20px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    gap: 20px;
   }
 
   .team-member {
@@ -676,19 +675,22 @@ font-size: 14px;
 
     padding: 20px;
     text-align: center;
-    flex: 1;
-    max-width: 500px;
-    min-width: 451px;
     gap:20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
 
 .team-member img{
-    width: auto;
-    height:269px;
-    margin-bottom: 20px;
+    width: 300px;
+    height:300px;
     border-radius: 12px;
+    object-fit: cover; /* ✅ this is the key */
+    object-position: top;
 }
 
 /* Limit preview text */
