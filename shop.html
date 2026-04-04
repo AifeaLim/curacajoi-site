@@ -309,21 +309,6 @@
 
     container.innerHTML = "";
 
-    // 1. Render Shopify products
-    products.forEach(p => {
-        const product = p.node;
-
-        const productUrl = `https://curacajoi.myshopify.com/products/${product.handle}`;
-
-        container.innerHTML += `
-        <div class="product-card">
-            <img src="${product.images.edges[0]?.node.url}" />
-            <h3>${product.title}</h3>
-            <p>CHF ${product.variants.edges[0]?.node.price.amount}</p>
-            <a href="${productUrl}" target="_blank" class="btn">Buy</a>
-        </div>
-        `;
-    });
 
     // 2. Manually add your custom product
     const customProduct = {
@@ -341,7 +326,26 @@
         <a href="${customProduct.link}" target="_blank" class="btn">Buy</a>
         </div>
     `;
-    })
+
+
+    // 1. Render Shopify products
+    products.forEach(p => {
+        const product = p.node;
+
+        const productUrl = `https://curacajoi.myshopify.com/products/${product.handle}`;
+
+        container.innerHTML += `
+        <div class="product-card">
+            <img src="${product.images.edges[0]?.node.url}" />
+            <h3>${product.title}</h3>
+            <p>CHF ${product.variants.edges[0]?.node.price.amount}</p>
+            <a href="${productUrl}" target="_blank" class="btn">Buy</a>
+        </div>
+        `;
+    });
+
+})
+    
     .catch(err => console.error(err));
     </script>
 
