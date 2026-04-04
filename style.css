@@ -44,61 +44,28 @@ body {
     top: 0px !important;
 }
 
-#title{
-    padding-top: 80px;
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes top & bottom */
+    height: 100vh; /* full banner height */
     text-align: center;
 }
 
 
+#intro {
+    margin-bottom: 140px; /* optional spacing from bottom */
+}
+
 #title h1{
     font-size: 72px;
-    padding-bottom: 500px;
     font-family: 'Cormorant Garamond', serif;
     color: #ffffff;
     font-weight: 100;
     font-style: normal;
+    margin-top: 160px;
     
 }
-/* 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0;
-    font-weight: 100;
-    font-style: normal;
-    font-optical-sizing: auto;
-    position: relative;
-    padding: 0 0 10px 0;
-    line-height: 120%;
-    color: #ffffff;
-    margin: 0
-}
-
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    color: #212121;
-    text-decoration: none!important;
-    opacity: 1
-}
-
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover {
-    opacity: .8
-} */
 
 a {
     color: #222222;
@@ -113,20 +80,6 @@ ul, li, ol{
 	padding: 0px;
 }
 
-/* 
-p1 {
-    font-family: 'AvenirLight', sans-serif;
-    letter-spacing: 0;
-    font-weight: 1.45em;
-    font-optical-sizing: auto;
-    position: relative;
-    padding: 0 0 10px 0;
-    line-height: 120%;
-    color: #ffffff;
-    margin: 0;
-    font-size: 14px ;
-
-}*/
 
 p2 {
     font-family: 'AvenirLight', sans-serif;
@@ -351,12 +304,6 @@ font-size: 14px;
 }
 
 
-#intro{
-    display: flex;
-    justify-content: center;  
-    align-items: center;      
-}
-
 #intro h2{
     font-size: 32px ;
     font-family: "Cormorant Garamond";
@@ -366,12 +313,6 @@ font-size: 14px;
     }
 
 
-
-#intro h2{
-    font-size: 36px;
-    font-family: "Cormorant Garamond";
-    font-style: italic;
-}
 
 .slider {
     position: relative;
@@ -614,7 +555,6 @@ font-size: 14px;
 
 .main-banner{
 	height: 95vh;
-    width: 100%;
     display: flex;
     justify-content: center; /* horizontal */
     align-items: center; 
@@ -1018,11 +958,8 @@ margin-left: -15px;
 }
 
 
-#contact .section-title p2{
-    margin-top: 20px;
-	color: #ffffff;
-    font-size: 40px;
-   text-align: left;
+#contact .section-title h4{
+    font-size: 16px;
 }
 
 #contact .section-title p{
@@ -1048,6 +985,10 @@ margin-left: -15px;
     font-weight: 400; /* optional */
 }
 
+.mail {
+ max-width: 112px;
+ height: auto;
+}
 /*------------------------------------------------------------------
     FOOTER
 -------------------------------------------------------------------*/
