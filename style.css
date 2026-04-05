@@ -33,7 +33,7 @@ html {
 
 .top{
 
-    background: url('uploads/cover01.png');
+    background: url('uploads/cover01.webp');
     height:60px;
 }
 
@@ -196,7 +196,7 @@ font-size: 14px;
     align-items: center;      /* vertical center */
     position: relative;       /* needed for ::before to be absolute inside */
     background-attachment: fixed; 
-    background-image: url('uploads/cover05.jpeg');
+    background-image: url('uploads/cover05.webp');
 }
 
 .shop::before {
@@ -272,21 +272,32 @@ font-size: 14px;
 }
 
 
+#mainNav .navbar-collapse {
+    display: flex;
+    justify-content: center; /* centers menu horizontally */
+    margin-right: 180px;
+}
+
+#mainNav .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* Horizontal menu */
 #mainNav .navbar-nav {
-    display: flex;
     flex-direction: row;
+    gap: 25px;
 }
 
 /* Space between items */
 #mainNav .nav-item {
-    margin-left: 25px;
-    align-self:auto;
+
+    display: flex;
 }
 
 #mainNav .navbar-brand {
     margin-left: 25px;
-    align-self:self-end;
 }
 
 /* Menu link color */
@@ -456,7 +467,7 @@ font-size: 14px;
 ----------------------------- */
 
 .events{
-    background-image: url('uploads/cover06.png');
+    background-image: url('uploads/cover06.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -558,7 +569,7 @@ font-size: 14px;
     display: flex;
     justify-content: center; /* horizontal */
     align-items: center; 
-    background: url('uploads/cover01.png');
+    background: url('uploads/cover01.webp');
 }
 
 
@@ -614,7 +625,7 @@ font-size: 14px;
 
 #about{
 	padding:  20px;
-    background: url('uploads/cover02.jpg');
+    background: url('uploads/cover02.webp');
     justify-content: center;
     align-items: center;
     height:500px; 
@@ -632,7 +643,7 @@ font-size: 14px;
 
 
 #team{
-    background-image: url('uploads/cover03.jpg');
+    background-image: url('uploads/cover03.webp');
     background-size: 200%;
     background-repeat: repeat;
     padding: 60px;
