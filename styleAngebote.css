@@ -846,7 +846,6 @@ iframe.goog-te-menu-frame {
 
 
 #mainNav .navbar-collapse {
-    display: flex;
     justify-content: center; /* centers menu horizontally */
     margin-right: 180px;
 }
