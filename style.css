@@ -231,7 +231,6 @@ font-size: 14px;
 
 
 #mainNav .navbar-collapse {
-    display: flex;
     justify-content: center; /* centers menu horizontally */
     margin-right: 180px;
 }
