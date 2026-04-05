@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <!-- Logo LEFT -->
             <a class="navbar-brand js-scroll-trigger" href="index.html">
-                <img src="uploads/logo.png" width= "120" height="20" alt="Logo">
+                <img src="uploads/logo.png" loading="lazy" width= "120" height="20" alt="Logo">
             </a>
 
              <!-- Mobile Toggle Button -->
@@ -68,10 +68,10 @@
 
     <!-- Hero Banner -->
 
-    <div class="top">
+    <div class="top" style="background-image: url('uploads/cover01.webp');" >
 
     </div>
-    <section id="home" class="main-banner parallaxie">
+    <section id="home" class="main-banner parallaxie" style="background-image: url('uploads/cover01.webp');">
         <div id="title">
             <h1>
                 CURA CAJOI
@@ -80,7 +80,7 @@
         </div>
     </section>
     
-    <div id="about" class="parallaxie ">
+    <div id="about" class="parallaxie " data-bg='uploads/cover02.webp'>
             <div class="section-title text-center scroll-float">
                 <h4>
                     <span class="bold-text">Herzlich willkommen bei CURA CAJOI </span> – einem Ort, an dem Du <span class="bold-text"> in Deine Kraft kommst. </span>
@@ -114,13 +114,13 @@
             </div>
     </div>
 
-    <div id="team" class="parallaxie">
+    <div id="team" class="parallaxie" data-bg='uploads/cover03.webp'>
             <div class="text-center scroll-float">
                 <h1>TEAM</h1>
 
                 <div class="team-grid">
                     <div class="team-member">
-                        <img src="uploads/team02.jpeg" alt="Alexander">
+                        <img src="uploads/team02.jpeg" loading="lazy" alt="Alexander">
                     
                         <h3>Alexander – Der Raumhalter</h3>
                     
@@ -134,7 +134,7 @@
                         <button class="readmore btn-primary" onclick="openPopup('teamPopup')">Read More</button>
                     </div>
                     <div class="team-member">
-                        <img src="uploads/team01.jpg" alt="Alexander">
+                        <img src="uploads/team01.jpg" loading="lazy" alt="Alexander">
                     
                         <h3>Andreas – Der Therapeut</h3>
                     
@@ -149,7 +149,7 @@
                         <button class="readmore btn-primary" onclick="openPopup('teamPopup2')">Read More</button>
                     </div>
                     <div class="team-member">
-                        <img src="uploads/team03.png" alt="Alexander">
+                        <img src="uploads/team03.png" loading="lazy" alt="Alexander">
                     
                         <h3>Fabian – Der Transformator</h3>
                     
@@ -174,7 +174,7 @@
             <!-- Close -->
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <div class="popup-image">
-                <img src="uploads/team02.jpeg" alt="Alexander">
+                <img src="uploads/team02.jpeg" loading="lazy" alt="Alexander">
             </div>
     
             <div class="popup-text">
@@ -230,7 +230,7 @@
             <!-- Close -->
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <div class="popup-image">
-                <img src="uploads/team01.jpg" alt="Alexander">
+                <img src="uploads/team01.jpg" loading="lazy" alt="Alexander">
             </div>
     
             <div class="popup-text">
@@ -288,7 +288,7 @@
             <!-- Close -->
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <div class="popup-image">
-                <img src="uploads/team03.png" alt="Alexander">
+                <img src="uploads/team03.png" loading="lazy" alt="Alexander">
             </div>
     
             <div class="popup-text">
@@ -348,12 +348,12 @@
         <div class="slider-track">
       
           <div class="slide">
-            <div class="parallaxieCarousel" style="background-image: url('uploads/angebote/ibg01.jpg');"></div>
+            <div class="parallaxieCarousel" loading="lazy" style="background-image: url('uploads/angebote/ibg01.jpg');"></div>
             <div class=" content">
               <h3>ANGEBOTE</h3>
               <h2>Einzelretreats</h2>
               <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
+                <img src="uploads/vector01.png" loading="lazy" alt="Cover Image">
               </div>
               <br>
               <a href="angebote.html#einzelretreats" class="btn-primary">Discover</a>
@@ -366,7 +366,7 @@
               <h3>ANGEBOTE</h3>
               <h2>Ecstatic Dance </h2>
               <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
+                <img src="uploads/vector01.png" loading="lazy" alt="Cover Image">
               </div>
               <br>
               <a href="angebote.html#dance" class="btn-primary">Discover</a>
@@ -379,7 +379,7 @@
               <h3>ANGEBOTE</h3>
               <h2>Vorträge</h2>
               <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
+                <img src="uploads/vector01.png"  loading="lazy"alt="Cover Image">
               </div>
               <br>
               <a href="angebote.html#workshops" class="btn-primary">Discover</a>
@@ -393,7 +393,7 @@
               <h3>ANGEBOTE</h3>
               <h2>Unterkunft</h2>
               <div class="img">
-                <img src="uploads/vector01.png" alt="Cover Image">
+                <img src="uploads/vector01.png" loading="lazy" alt="Cover Image">
               </div>
               <br>
               <a href="angebote.html#unterkunft" class="btn-primary">Discover</a>
@@ -414,7 +414,7 @@
 
 <!-- Kalendar Section -->
 
-<div id="kalendar" class="parallaxie events">
+<div id="kalendar" class="parallaxie events" data-bg='uploads/cover06.webp'>
     <div class="section-title text-center scroll-float">
         <h3>KALENDER</h3>
         <div id="events-container"></div>
@@ -427,7 +427,7 @@
 
 	 <!-- Shop Section -->
 
-     <div id="shop" class="parallaxie shop" data-speed="0.1">
+     <div id="shop" class="parallaxie shop" data-speed="0.1" data-bg='uploads/cover05.webp'>
         <div class="section-title text-center scroll-float">
             <h3>SHOP</h3>
             
@@ -442,8 +442,6 @@
             
         </div>
 
-        <!-- Floating objects container -->
-        <!-- <div class="floating-objects"></div> -->
     </div>
 
     <!-- Contact Section -->
@@ -458,17 +456,17 @@
                         <h3>Kontakt</h3>
                         
                         <div class="img">
-                            <img src="uploads/vector01.png" alt="Cover Image">
+                            <img src="uploads/vector01.png" alt="Cover Image" loading="lazy" >
                         </div> 
                         
                         <p>
                             Alexander Heil<br>
                             Loco / Valle Onsernone<br>
-                            <img class="mail" src="uploads/mail.png">
+                            <img class="mail" src="uploads/mail.png" loading="lazy" >
                         </p>
 
                         <div class="profile">
-                            <img src="uploads/contact.jpeg">
+                            <img src="uploads/contact.jpeg" loading="lazy" >
                         </div> 
                         <br>
                         <h4>Munay Ki Einweihung mit  Don Francisco Chura Florez, 
@@ -524,7 +522,7 @@
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius">
         <div class="img">
-            <img src="uploads/vector02.png" alt="Cover Image" style="width:32px; height:20px;">
+            <img src="uploads/vector02.png" alt="Cover Image" loading="lazy" style="width:32px; height:20px;">
         </div>
     </a>
 
@@ -643,60 +641,11 @@
 updateParallax();
     </script>
 
-<script>
-    const floatingContainer = document.querySelector('.floating-objects');
-    
-    const images = [
-        'images/floating01.png',
-        'images/floating02.png',
-        'images/floating03.png',
-        'images/floating01.png',
-        'images/floating02.png'
-    ];
-    
-    let side = 'left'; // start side
-    
-    function floatImage() {
-        const img = document.createElement('img');
-        img.classList.add('floating-object');
-    
-        // Pick random image
-        img.src = images[Math.floor(Math.random() * images.length)];
-    
-        // Alternate left/right
-        img.style.left = side === 'left' ? '10%' : '80%';
-        side = side === 'left' ? 'right' : 'left';
-    
-        // Big size
-        const size = 240 + Math.random() * 40; // 240-280px
-        img.style.width = size + 'px';
-        img.style.height = size + 'px';
-    
-        // Normal speed
-        const duration = 3 + Math.random() * 0.2; // 6-8s
-        img.style.animationDuration = duration + 's';
-    
-        floatingContainer.appendChild(img);
-    
-        // Start next image halfway through current animation
-        setTimeout(() => {
-            floatImage();
-        }, (duration * 1000) / 2);
-    
-        // Remove image after full animation
-        setTimeout(() => {
-            img.remove();
-        }, duration * 1000);
-    }
-    
-    // Start the loop
-    floatImage();
-    </script>
 
     <script>
         const scrollElements = document.querySelectorAll('.scroll-float');
 
-const observer = new IntersectionObserver(
+const scrollObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -711,7 +660,7 @@ const observer = new IntersectionObserver(
     }
 );
 
-scrollElements.forEach(el => observer.observe(el));
+scrollElements.forEach(el => scrollObserver.observe(el));
     </script>
 
 
@@ -931,7 +880,7 @@ slider.addEventListener('mousemove', (e) => {
 
         container.innerHTML += `
         <div class="product-card">
-            <img src="${product.images.edges[0]?.node.url}" onclick="openModal(this.src)" />
+            <img src="${product.images.edges[0]?.node.url}" loading="lazy" onclick="openModal(this.src)" />
             <h3>${product.title}</h3>
             <p>€ ${price}</p>
             <br>
@@ -983,8 +932,27 @@ slider.addEventListener('mousemove', (e) => {
     });
     </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+      const bgElements = document.querySelectorAll('[data-bg]');
+    
+      const bgObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            el.style.backgroundImage = `url(${el.dataset.bg})`;
+            bgObserver.unobserve(el);
+          }
+        });
+      });
+    
+      bgElements.forEach(el => bgObserver.observe(el));
+    
+    });
+    </script>
+
 
 </body>
 
 </html>
-
