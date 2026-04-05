@@ -51,6 +51,12 @@ body {
     text-align: center;
 }
 
+#team > *{
+    position: relative;
+    z-index: 1;
+}
+
+
 
 #intro {
     margin-bottom: 140px; /* optional spacing from bottom */
