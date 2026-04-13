@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>ANGEBOTE</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/uploads/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styleAngebote.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+
+<body id="page-top">
+
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+        <div id="main-ld">
+            <div class="loader">
+                <span class="loader-inner">CURA CAJOI</span>
+            </div>
+        </div>
+    </div> -->
+    <!-- END LOADER -->
+
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container-fluid">
+            <!-- Logo LEFT -->
+            <a class="navbar-brand js-scroll-trigger" href="index.html">
+                <img src="uploads/logo.png" width= "120" height="20" alt="Logo">
+            </a>
+
+             <!-- Mobile Toggle Button -->
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+            <!-- Menu RIGHT -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="angebote.html">ANGEBOTE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kalendar.html">KALENDER</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">KONTAKT</a></li>
+                </ul>
+
+                <!-- <div id="google_translate_element" class="ms-lg-3"></div> -->
+            </div>
+            
+        </div>
+    </nav>
+    <!-- END Navigation -->
+
+
+    <!-- MAIN CONTENT -->
+    <div class="top">
+
+    </div>
+    <section id="home" class="main-banner parallaxie" style="background-image: url('uploads/angebote/bg01.png');">
+
+
+
+    <div class="kalendar-wrapper">
+    <section id="kalendar" class="parallaxie" style="background-image: url('uploads/angebote/bg05.jpg');">
+        <div class="section-title text-center scroll-float">
+            <h2>KALENDER</h2>
+        </div>
+        <div class="kalender-content">
+        <div class="event-filters">
+            <button class="btn" onclick="showPast()">Past</button>
+            <button class="btn" onclick="showUpcoming()">Upcoming</button>
+        </div>
+        <div id="events-container"></div>
+        <div class="view-all-wrapper">
+            <button class="btn" onclick="showAll()">View All Events</button>
+        </div>
+    </div>
+
+    </section>
+<!-- 
+    <div class="unterkunftbetween-line"></div> -->
+
+
+    <!-- FOOTER -->
+    <div class="copyrights">
+        <div class="footer-left">
+            <p class="footer-company-name">CURA CAJOI © 2026</p>
+        </div>
+    </div>
+
+    
+    <a href="#" id="scroll-to-top" class="dmtop global-radius">
+        <div class="img">
+            <img src="uploads/vector02.png" alt="Cover Image" style="width:32px; height:20px;">
+        </div>
+    </a>
+
+
+
+
+
+<!-- JS Files -->
+<script src="js/all.js"></script>
+<script src="js/jquery.mobile.customized.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/parallaxie.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- 
+<script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'de',
+        includedLanguages: 'de,en,it', // include German here
+        autoDisplay: false, // ❗ prevents auto popup/translation
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+    </script>
+    
+
+    <script>
+        function forceGermanOption() {
+          const select = document.querySelector(".goog-te-combo");
+        
+          if (select) {
+            if (!select.querySelector("option[value='de']")) {
+              const option = document.createElement("option");
+              option.value = "de";
+              option.text = "Deutsch";
+              select.insertBefore(option, select.firstChild);
+            }
+          } else {
+            // keep trying until it exists
+            setTimeout(forceGermanOption, 500);
+          }
+        }
+        
+        document.addEventListener("DOMContentLoaded", forceGermanOption);
+        </script>
+
+<script>
+    function removeGoogleBar() {
+      const frame = document.querySelector(".goog-te-banner-frame");
+      if (frame) {
+        frame.style.display = "none";
+      }
+    
+      document.body.style.top = "0px";
+    }
+    
+    // run repeatedly because Google keeps re-injecting it
+    setInterval(removeGoogleBar, 500);
+    </script> -->
+
+<!-- 
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          if (document.cookie.includes("googtrans")) {
+            document.cookie = "googtrans=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+          }
+        });
+        </script>   -->
+
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+      centeredSlides: true,
+    
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      }
+    });
+    </script>
+
+
+
+    <script>
+        const scrollElements = document.querySelectorAll('.scroll-float');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // animate in
+            } else {
+                entry.target.classList.remove('visible'); // optional: animate out
+            }
+        });
+    },
+    {
+        threshold: 0.1 // trigger when 10% of the element is visible
+    }
+);
+
+scrollElements.forEach(el => observer.observe(el));
+    </script>
+
+
+
+<!-- Google Calendar Events Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const calendarId = "3afb4833f3859d7d74a131d17567319b7fe7bdda6be731032909b5584604b09d@group.calendar.google.com";
+        const apiKey = "AIzaSyBqXZNp5689GlaUOh5APdmKdMTlxbGOhB0";
+    
+        const container = document.getElementById("events-container");
+        let allEvents = [];
+    
+        // ---------------- DATE HELPERS ----------------
+        function getEventDate(event) {
+            return event.start.dateTime
+                ? new Date(event.start.dateTime)
+                : new Date(event.start.date + "T00:00:00");
+        }
+    
+        function formatDate(date) {
+            return date.toLocaleDateString();
+        }
+    
+        function formatTime(date) {
+            return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+    
+        // ---------------- IMAGE ----------------
+        function convertDriveToEmbed(url) {
+            if (!url) return null;
+    
+            const match = url.match(/\/d\/([^\/]+)|id=([^&]+)/);
+            const fileId = match ? (match[1] || match[2]) : null;
+    
+            if (!fileId) return null;
+    
+            return `https://drive.google.com/file/d/${fileId}/preview`;
+        }
+    
+        function extractImage(description) {
+            if (!description) return null;
+    
+            let match = description.match(/IMAGE:\s*(https?:\/\/\S+)/i);
+            if (match) return match[1].trim();
+    
+            match = description.match(/https:\/\/drive\.google\.com\/\S+/i);
+            if (match) return match[0].trim();
+    
+            match = description.match(/https?:\/\/\S+\.(jpg|jpeg|png|webp|gif)(\?\S*)?/i);
+            if (match) return match[0].trim();
+    
+            return null;
+        }
+    
+        function extractDesc(description) {
+            if (!description) return "";
+    
+            let match = description.match(/DESC:\s*([\s\S]*)/i);
+            return match ? match[1].trim() : "";
+        }
+    
+        // ---------------- ICS ----------------
+        function formatDateICS(date) {
+            const pad = n => n < 10 ? '0' + n : n;
+            return date.getUTCFullYear() +
+                pad(date.getUTCMonth() + 1) +
+                pad(date.getUTCDate()) + 'T' +
+                pad(date.getUTCHours()) +
+                pad(date.getUTCMinutes()) +
+                pad(date.getUTCSeconds()) + 'Z';
+        }
+    
+        function generateICS(event) {
+            const start = new Date(event.start.dateTime || event.start.date);
+            const end = new Date(event.end.dateTime || event.end.date);
+    
+            const icsContent = `BEGIN:VCALENDAR
+    VERSION:2.0
+    BEGIN:VEVENT
+    UID:${event.id}
+    DTSTAMP:${formatDateICS(new Date())}
+    DTSTART:${formatDateICS(start)}
+    DTEND:${formatDateICS(end)}
+    SUMMARY:${event.summary || ""}
+    DESCRIPTION:${event.description || ""}
+    LOCATION:${event.location || ""}
+    END:VEVENT
+    END:VCALENDAR`;
+    
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            return URL.createObjectURL(blob);
+        }
+    
+        // ---------------- RENDER ----------------
+        function renderEvents(events) {
+            container.innerHTML = "";
+    
+            if (events.length === 0) {
+                container.innerHTML = "<p>No events found.</p>";
+                return;
+            }
+    
+            events.forEach(event => {
+    
+                const start = getEventDate(event);
+                const rawDesc = event.description || "";
+    
+                const imageUrl = extractImage(rawDesc);
+                const desc = extractDesc(rawDesc);
+    
+                let imageHTML = "";
+    
+                if (imageUrl) {
+                    if (imageUrl.includes("drive.google.com")) {
+                        const embedUrl = convertDriveToEmbed(imageUrl);
+                        if (embedUrl) {
+                            imageHTML = `<iframe src="${embedUrl}" class="event-img"></iframe>`;
+                        }
+                    } else {
+                        imageHTML = `<img src="${imageUrl}" class="event-img">`;
+                    }
+                }
+    
+                const icsLink = generateICS(event);
+    
+                const card = document.createElement("div");
+                card.className = "event-card";
+    
+                card.innerHTML = `
+                    <div class="card-body">
+                        ${imageHTML}
+                        <h3><span class="bold-text">${event.summary || "No title"}</span></h3>
+    
+                        <p><strong>Date:</strong> ${formatDate(start)}</p>
+                        <p><strong>Time:</strong> ${formatTime(start)}</p>
+    
+                        <p class="event-desc">${desc || ""}</p>
+    
+                       <a href="${icsLink}" download="${event.summary || "event"}.ics" class="btn">
+                            Add to Calendar
+                        </a>
+                    </div>
+                `;
+    
+                container.appendChild(card);
+            });
+        }
+    
+        // ---------------- FILTERS ----------------
+        window.showUpcoming = function () {
+            const now = new Date();
+            const upcoming = allEvents.filter(e => getEventDate(e) >= now);
+            renderEvents(upcoming);
+        };
+    
+        window.showPast = function () {
+            const now = new Date();
+            const past = allEvents.filter(e => getEventDate(e) < now);
+            renderEvents(past);
+        };
+    
+        window.showAll = function () {
+            renderEvents(allEvents);
+        };
+    
+        // ---------------- FETCH ----------------
+        fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&orderBy=startTime&singleEvents=true`)
+            .then(res => res.json())
+            .then(data => {
+    
+                if (!data.items || data.items.length === 0) {
+                    container.innerHTML = "<p>No events found.</p>";
+                    return;
+                }
+    
+                allEvents = data.items.sort((a, b) =>
+                    getEventDate(a) - getEventDate(b)
+                );
+    
+                showUpcoming();
+            })
+            .catch(err => {
+                console.error(err);
+                container.innerHTML = "<p>Failed to load events.</p>";
+            });
+    
+    });
+    </script>
+<script>
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slide");
+    const slider = document.querySelector(".slider");
+    
+    let speed = 1;
+    let position = 0;
+    
+    // ✅ Clone slides BEFORE measuring width
+    slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+    });
+    
+    window.addEventListener("load", () => {
+        const totalWidth = track.scrollWidth / 2;
+    
+        function animate() {
+            position -= speed;
+    
+            // ✅ Forward loop
+            if (position <= -totalWidth) {
+                position += totalWidth;
+            }
+    
+            // ✅ Backward loop
+            if (position >= 0) {
+                position -= totalWidth;
+            }
+    
+            track.style.transform = `translateX(${position}px)`;
+    
+            requestAnimationFrame(animate);
+        }
+    
+        animate();
+    
+        // Pause on hover
+        slider.addEventListener("mouseenter", () => {
+            speed = 0;
+        });
+    
+        slider.addEventListener("mouseleave", () => {
+            speed = 1;
+        });
+    
+        // Buttons (direction control)
+        document.querySelector(".next")?.addEventListener("click", () => {
+            speed = 2; // force forward
+        });
+    
+        document.querySelector(".prev")?.addEventListener("click", () => {
+            speed = -2; // force backward
+        });
+    });
+    </script>
+
+<script>
+    function openModal(slide) {
+        const img = slide.querySelector("img").src;
+        const title = slide.querySelector("h3")?.innerText || "";
+        const desc = slide.querySelector("p")?.innerText || "";
+    
+        document.getElementById("modal-img").src = img;
+        document.getElementById("modal-title").innerText = title;
+        document.getElementById("modal-desc").innerText = desc;
+    
+        document.getElementById("modal").style.display = "flex";
+    }
+    
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+    
+    // Optional: close when clicking outside content
+    document.getElementById("modal").addEventListener("click", function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+    </script>
+
+<script>
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        const el = document.querySelector(window.location.hash);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth" });
+          }, 500); // delay lets other scripts finish
+        }
+      }
+    });
+    </script>
+
+
+</body>
+</html>
