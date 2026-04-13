@@ -205,34 +205,43 @@ font-size: 14px;
 
 .copyrights {
     border-top: 1px dashed rgba(255, 255, 255, 0.1);
-    background-color: #ffffff;
+    background: #000000 !important;
     width: 100%;
-    
-    display: flex;
-    justify-content: center;  
-    align-items: center;  
-    flex-direction: row;     
-
-    gap: 20px;                 
     padding: 20px;
     box-sizing: border-box;
-    background: #000000 !important;
-}
-
-
-
-.footer-company-name {
-color: #ffffff !important;
-text-align: center;
-justify-content: center;
-align-items: center;
-font-size: 10px;
-font-family: "AvenirLight";
-font-style: normal;
-margin-bottom: 20px;
-
-}
-
+  }
+  
+  .footer-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .footer-company-name {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    color: #ffffff;
+    font-size: 10px;
+    font-family: "AvenirLight";
+  }
+  
+  .legal {
+    flex: 1;
+    text-align: right;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "AvenirLight";
+    text-decoration: none;
+  }
+  
+  .legal:hover {
+    color: #7084bc;
+  }
 
 #google_translate_element {
     transform: scale(0.9);
@@ -284,7 +293,7 @@ iframe.goog-te-menu-frame {
 }
   
 .shop-section {
-    padding: 80px 60px;
+    padding: 40px 60px;
     background: #ffffff;
     text-align: center;
     background-size: cover;
@@ -477,7 +486,7 @@ iframe.goog-te-menu-frame {
 -------------------------------------------------------------------*/
 
 .dmtop.show {
-    bottom: 10px;
+    bottom: 70px;
 }
 
 .dmtop {
@@ -499,6 +508,7 @@ iframe.goog-te-menu-frame {
     -o-transition: all .7s ease-in-out;
     -ms-transition: all .7s ease-in-out;
     transition: all .7s ease-in-out;
+    z-index: 10;
 }
 
 .dmtop:hover{
