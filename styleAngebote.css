@@ -34,7 +34,7 @@ html {
 
 .top{
 
-    background: url('uploads/angebote/bg01.png');
+    background: url('uploads/angebote/bg01.jpg');
     height:60px;
 }
 
@@ -44,7 +44,7 @@ body {
     line-height: 1.80857;
 }
 
-#home, #dance, #zum, #workshops,#kalendar {
+#home, #dance, #zum, #workshops {
     position: relative;
 }
 
@@ -55,7 +55,7 @@ body {
 
 }
 
-#zum, #workshops, #kalendar, #unterkunft{
+#zum, #workshops, #unterkunft{
     padding: 140px;
     display: flex;
     flex-direction: column;           
@@ -64,10 +64,8 @@ body {
 
 
 #kalendar {
-    padding: 140px 40px;
-    display: flex;
-    flex-direction: column;   
-    height: 100vh;        
+    padding: 40px 40px; 
+    padding-bottom: 200px;
 
 }
 
@@ -78,7 +76,8 @@ body {
 .main-banner,
 .shop,
 #team {
-    background-position: center center !important;
+    /* background-position: top center !important; */
+    min-height: 100vh;
 }
 
 #home::before,
@@ -517,19 +516,18 @@ font-size: 14px;
 
     padding: 40px 20px;
     text-align: center;
-    flex: 1;
     display: flex;
     flex-direction: column;  
     gap: 12px; 
+    width: 100%;
 
 }
 
 #events-container{
-    display: flex;
-    justify-content: center;
-    gap: 12px;              /* space between cards */
-    flex-wrap: wrap;        /* responsive */
-    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px;
+    padding: 20px;
 }
 
 .event-desc {
@@ -667,6 +665,39 @@ padding-top:4px;
     opacity: 1;
 } */
 
+#events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  font-family: sans-serif;
+}
+
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 15px;
+}
+
+.event-content h3 {
+  margin: 0 0 10px;
+}
+
+.event-content p {
+  margin: 4px 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
 
 
 .Unterkunft-grid {
