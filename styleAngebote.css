@@ -1112,7 +1112,7 @@ iframe.goog-te-menu-frame {
     font-size: 14px;
 
     padding: 6px 40px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     text-decoration: none !important;
 }
 
@@ -1194,11 +1194,15 @@ iframe.goog-te-menu-frame {
             z-index: 0;
         }
 
-    #info,#dance, #home,#zum, #workshops, #kalendar{
+    #info,#dance, #home,#zum, #workshops{
             padding: 40px;
             display: flex;
             flex-direction: column;           
         
+        }
+
+        #kalendar{
+            padding: 20px;
         }
 
         #unterkunft{
@@ -1365,19 +1369,33 @@ iframe.goog-te-menu-frame {
             overflow: hidden;
         }
 
+        .event-filters {
+            display: flex; 
+            flex-direction: column;
+            gap: 12px;
+          }
+
+        
+        .event-filters .btn {
+            width: 100%; 
+        }
+
+        #kalendar .kalender-content{
+            padding: 20px 12px;
+        }
 
 #events-container{          
     margin: 0px;
-    padding-top: 12px;
+    padding: 12px 0px;
     grid-template-columns: repeat(1, 1fr) !important;
 }
 
 .event-card .card-body{
     padding: 12px 12px;
-    max-width: 400px;
     min-height:auto;
 
 }   
+
 
 .Unterkunft-grid {
     display: grid;
