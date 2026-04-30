@@ -38,6 +38,12 @@ html {
     height:60px;
 }
 
+.topKalendar{
+
+    background: url('uploads/angebote/bg05.jpg');
+    height:60px;
+}
+
 body {
     color: #000000;
     font-family: 'AvenirLight', sans-serif;
@@ -65,7 +71,6 @@ body {
 
 #kalendar {
     padding: 40px 40px; 
-    padding-bottom: 200px;
 
 }
 
@@ -525,7 +530,7 @@ font-size: 14px;
 
 #events-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(5, 1fr) !important;
     gap: 24px;
     padding: 20px;
 }
@@ -666,8 +671,8 @@ padding-top:4px;
 } */
 
 #events-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); */
   gap: 20px;
 }
 
@@ -681,7 +686,7 @@ padding-top:4px;
 
 .event-card img {
   width: 100%;
-  height: 180px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -691,6 +696,7 @@ padding-top:4px;
 
 .event-content h3 {
   margin: 0 0 10px;
+  font-size: 20px;
 }
 
 .event-content p {
@@ -1360,9 +1366,10 @@ iframe.goog-te-menu-frame {
         }
 
 
-#events-container{           /* responsive */
+#events-container{          
     margin: 0px;
     padding-top: 12px;
+    grid-template-columns: repeat(1, 1fr) !important;
 }
 
 .event-card .card-body{
