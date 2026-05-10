@@ -1075,8 +1075,8 @@ margin-left: -15px;
 }
 /* ===== NEWS GRID WRAPPER ===== */
 #news-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     padding: 20px;
 
@@ -1116,7 +1116,7 @@ margin-left: -15px;
   /* ===== IMAGE ===== */
   .news-card img {
     width: 100%;
-    height: 300px;
+    height: auto;
     object-fit: cover;
     display: block;
   }
