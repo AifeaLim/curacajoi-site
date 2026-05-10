@@ -20,6 +20,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB15LQTWZH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TB15LQTWZH');
+    </script>
     
 </head>
 
@@ -136,6 +146,26 @@
             </div>
     
         </div>
+        
+    </div>
+
+    <div id="newsletter">
+      <h3>NEWSLETTER</h3>
+
+      <div>
+        <form id="newsletter-form">
+        <input type="email" placeholder="Your email" required />
+          <button type="submit" class="btn-form">Subscribe</button>
+      </form>
+    </div>
+    </div>
+
+  
+
+
+    <div id="news" class="text-center section-title scroll-float">
+      <h3>NEWS</h3>
+    <div id="news-container"></div>
     </div>
 
 
@@ -176,103 +206,91 @@
 
     <!-- iCal.js (optional if you use it) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
-
     
-
-    <!-- Google Calendar Events Script -->
     <script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const calendarId = "3afb4833f3859d7d74a131d17567319b7fe7bdda6be731032909b5584604b09d@group.calendar.google.com";
-			const apiKey = "AIzaSyBqXZNp5689GlaUOh5APdmKdMTlxbGOhB0";
-			const now = new Date().toISOString();
-			const container = document.getElementById("events-container");
-		
-			// Helper to format date for ICS
-			function formatDateICS(date) {
-				const pad = n => n < 10 ? '0' + n : n;
-				return date.getUTCFullYear() +
-					   pad(date.getUTCMonth() + 1) +
-					   pad(date.getUTCDate()) + 'T' +
-					   pad(date.getUTCHours()) +
-					   pad(date.getUTCMinutes()) +
-					   pad(date.getUTCSeconds()) + 'Z';
-			}
-		
-			// Generate ICS file content
-			function generateICS(event) {
-				const start = new Date(event.start.dateTime || event.start.date);
-				const end = new Date(event.end.dateTime || event.end.date);
-				const icsContent = `
-		BEGIN:VCALENDAR
-		VERSION:2.0
-		PRODID:-//CURA CAJOI//EN
-		BEGIN:VEVENT
-		UID:${event.id}
-		DTSTAMP:${formatDateICS(new Date())}
-		DTSTART:${formatDateICS(start)}
-		DTEND:${formatDateICS(end)}
-		SUMMARY:${event.summary || "No Title"}
-		DESCRIPTION:${event.description || ""}
-		LOCATION:${event.location || ""}
-		END:VEVENT
-		END:VCALENDAR
-				`.trim();
-				const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-				return URL.createObjectURL(blob);
-			}
-		
-			fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${now}&orderBy=startTime&singleEvents=true`)
-				.then(res => res.json())
-				.then(data => {
-					if (!data.items || data.items.length === 0) {
-						container.innerHTML = `<p class="section-title text-center">No upcoming events found.</p>`;
-						return;
-					}
-		
-					data.items.sort((a, b) => new Date(a.start.dateTime || a.start.date) - new Date(b.start.dateTime || b.start.date));
-		
-					data.items.forEach(event => {
-						const startStr = new Date(event.start.dateTime || event.start.date)
-							.toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
-						const location = event.location || "No location";
-		
-						let imgSrc = "https://via.placeholder.com/400x200";
-						if (event.description) {
-							const imgMatch = event.description.match(/<img.*?src="(.*?)"/i);
-							if (imgMatch && imgMatch[1]) imgSrc = imgMatch[1];
-						}
-		
-						const icsURL = generateICS(event);
-		
-						const card = document.createElement("div");
-						card.className = "event-card";
-						card.innerHTML = `
-							
-							<div class="card-body">
-								<h3 class="card-title">${event.summary || "No title"}</h3>
-								<p class="card-text"><strong>Date:</strong> ${startStr}</p>
-								<p class="card-text"><strong>Location:</strong> ${location}</p>
-								<a href="${icsURL}" download="${event.summary || 'event'}.ics" class="btn">Add to Calendar</a>
-							</div>
-						`;
-						container.appendChild(card);
-					});
-				})
-				.catch(err => {
-					console.error("Error fetching events:", err);
-					container.innerHTML = `<p class="text-center text-danger">Failed to load events.</p>`;
-				});
-		});
-		</script>
-
-        
-	<script>
-   
-
-// Start loop
-updateParallax();
-    </script>
-
+      async function getNews() {
+        const res = await fetch("https://opensheet.elk.sh/1hO_hHLDsapkubvSUFM5OMzvpfow2R5s9vPtCH2sXIRY/News");
+        return await res.json();
+      }
+      
+      // 🔥 MAP DATA
+      function mapNews(item) {
+        return {
+          type: item.Type,
+          title: item.Name || "",
+          date: item.PublishedDate || "",
+          description: item.Description || "",
+          image: item.Image || "https://via.placeholder.com/400x200",
+          published: item.Published
+        };
+      }
+      
+      // 🔥 PARSE GERMAN DATE
+      function parseGermanDate(dateStr) {
+        if (!dateStr) return null;
+      
+        const months = {
+          Januar: 0,
+          Februar: 1,
+          März: 2,
+          April: 3,
+          Mai: 4,
+          Juni: 5,
+          Juli: 6,
+          August: 7,
+          September: 8,
+          Oktober: 9,
+          November: 10,
+          Dezember: 11
+        };
+      
+        const parts = dateStr.replace(",", "").split(" ");
+      
+      
+        const day = parseInt(parts[1]);
+        const month = months[parts[2]];
+        const year = parseInt(parts[3]);
+      
+        return new Date(year, month, day);
+      }
+      
+      // 🔥 RENDER
+      function renderNews(news) {
+        const container = document.getElementById("news-container");
+      
+        if (!news.length) {
+          container.innerHTML = "<p>No news found.</p>";
+          return;
+        }
+      
+        container.innerHTML = news.map(item => `
+          <div class="news-card">
+            <img src="${item.image}" alt="${item.title}" />
+            <div class="news-content">
+              <h3>${item.title}</h3>
+              <p><strong>Published date:</strong> ${item.date}</p>
+              <p>${item.description}</p>
+            </div>
+          </div>
+        `).join("");
+      }
+      
+      // 🔥 INIT
+      async function initNews() {
+        const data = await getNews();
+      
+        console.log("RAW NEWS:", data);
+      
+        const news = data
+          .map(mapNews)
+          .filter(item => item.type === "News" && item.published === "TRUE")
+          .sort((a, b) => parseGermanDate(b.date) - parseGermanDate(a.date)); // 🔥 latest first
+      
+        renderNews(news);
+      }
+      
+      initNews();
+      </script>
 
     <script>
         const scrollElements = document.querySelectorAll('.scroll-float');
@@ -605,6 +623,34 @@ slider.addEventListener('mousemove', (e) => {
       const mailtoLink = `mailto:nursofeaiwani@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   
       window.location.href = mailtoLink;
+  });
+  </script>
+
+
+<script>
+  document.getElementById("newsletter-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+  
+    const email = e.target.querySelector("input").value;
+  
+    const response = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "api-key": "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",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        listIds: [5], // your list ID in Brevo
+        updateEnabled: true
+      })
+    });
+  
+    if (response.ok) {
+      alert("Subscribed successfully!");
+    } else {
+      alert("Something went wrong");
+    }
   });
   </script>
 
