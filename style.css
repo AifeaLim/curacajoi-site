@@ -47,7 +47,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* pushes top & bottom */
-    height: 100vh; /* full banner height */
+    height: 95vh; /* full banner height */
     text-align: center;
 }
 
@@ -59,7 +59,7 @@ body {
 
 
 #intro {
-    margin-bottom: 140px; /* optional spacing from bottom */
+    margin-bottom: 160px; /* optional spacing from bottom */
 }
 
 #title h1{
@@ -68,7 +68,7 @@ body {
     color: #ffffff;
     font-weight: 100;
     font-style: normal;
-    margin-top: 160px;
+    margin-top: 20px;
     
 }
 
@@ -396,20 +396,45 @@ font-size: 14px;
 .next { right: 10px; }
 
 /* Parallax background */
-.parallaxie {
+
+
+
+
+#about.parallaxie{
+    background-size: 150% !important;
+    background-position: top 70px !important;
+    background-repeat: no-repeat;
     
-    background-size: cover;
-    background-position: center;      /* fills container */
+    background-attachment: fixed; 
+}
+
+
+
+#team.parallaxie{
+    background-size: 150% !important;
+    background-position: top 70px !important;
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed; 
+}
+
+
+
+.parallaxie {
+
+    background-size: 105% !important;      /* fills container */
     background-attachment: fixed;   /* parallax effect */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 100px 0px 100px;
+    padding: 100px 0px 0px;
    
 
     background-repeat: no-repeat;
+    aspect-ratio: 1920 / 1080;
+    height:auto !important;
 }
 
 
@@ -530,12 +555,11 @@ font-size: 14px;
     SECTIONS
 -------------------------------------------------------------------*/
 
-.main-banner{
-	height: 95vh;
+/* .main-banner{
+	height: 120vh;
     display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center; 
-}
+    justify-content: center;
+   */
 
 
 .main-banner .section-title{
@@ -592,7 +616,6 @@ font-size: 14px;
 	padding:  20px;
     justify-content: center;
     align-items: center;
-    height:500px; 
 }
 #about::before{
     content: "";
@@ -1060,7 +1083,7 @@ margin-left: -15px;
   }
   
   /* ===== NEWS CARD ===== */
-  .news-card {
+  /* .news-card {
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
@@ -1068,7 +1091,22 @@ margin-left: -15px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
+
+    height:auto;
+  } */
+
+  .news-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: visible; /* 🔥 change this */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    height: auto;
   }
+
+  
   
   .news-card:hover {
     transform: translateY(-6px);
@@ -1089,6 +1127,7 @@ margin-left: -15px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    height:auto;
   }
   
   /* ===== TITLE ===== */
@@ -1103,23 +1142,35 @@ margin-left: -15px;
   /* ===== DATE ===== */
   .news-content p strong {
     font-weight: 600;
-    color: #333;
+    color: #000000;
+  }
+
+  .news-content p {
+    display: block;
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+    -webkit-line-clamp: unset;
+
+    color: #000000;
   }
   
-  .news-content p {
+  /* .news-content p {
     margin: 0;
     font-size: 14px;
     color: #555;
     line-height: 1.5;
-  }
+    
+  } */
   
   /* ===== DESCRIPTION (limit lines) ===== */
-  .news-content p:last-child {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+ .news-content p:last-child {
+  display: block;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+  -webkit-line-clamp: unset;
+}
   
   /* ===== RESPONSIVE TWEAK ===== */
   @media (max-width: 600px) {
