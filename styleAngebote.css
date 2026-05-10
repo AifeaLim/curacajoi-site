@@ -61,17 +61,33 @@ body {
 
 }
 
-#zum, #workshops, #unterkunft{
+#zum, #workshops{
     padding: 140px;
     display: flex;
     flex-direction: column;           
 
 }
 
+#unterkunft{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;           
+
+}
 
 #kalendar {
     padding: 40px 40px; 
+    background-size: cover;
 
+}
+
+#workshops.parallaxie{
+    background-size: cover 150% !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed; 
+    background-color: #000;
 }
 
 
@@ -84,6 +100,7 @@ body {
     /* background-position: top center !important; */
     min-height: 100vh;
 }
+
 
 #home::before,
 #dance::before,
@@ -319,7 +336,7 @@ font-size: 14px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 
     transition: all 0.3s ease;
-    border-radius: 40px;
+    border-radius: 20px;
 
     padding: 40px;
     text-align: center;
@@ -708,18 +725,17 @@ padding-top:4px;
 
 .Unterkunft-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    max-width: 1000px;
     margin: auto;
-    width: 100vh;
-    padding-top: 40px;
+    width: 120vh;
+    padding-top: 0px;
     z-index: 20;
+    text-align: center;
 }
 
 .Unterkunft-content img {
-    width: 100%;
-    height: 300px; /* control size */
+    width: 100vh;
+    height: auto; 
     object-fit: cover;
     border-radius: 12px;
 }
