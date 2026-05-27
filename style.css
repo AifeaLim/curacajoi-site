@@ -401,28 +401,31 @@ font-size: 14px;
 
 
 #about.parallaxie{
-    background-size: 150% !important;
-    background-position: top 70px !important;
+    background-size: 150% ;
+    background-position: top 70px ;
     background-repeat: no-repeat;
     
     background-attachment: fixed; 
+    padding: 100px;
 }
 
 
 
 #team.parallaxie{
-    background-size: 150% !important;
-    background-position: top 70px !important;
     background-repeat: no-repeat;
+        
+    background-color: #000;
+    max-height:fit-content ;
+    background-attachment: scroll !important;
+    background-position: center center !important;
     
-    background-attachment: fixed; 
 }
 
 
 
 .parallaxie {
 
-    background-size: 105% !important;      /* fills container */
+    background-size: cover 105% !important;      /* fills container */
     background-attachment: fixed;   /* parallax effect */
     display: flex;
     justify-content: center;
@@ -433,8 +436,6 @@ font-size: 14px;
    
 
     background-repeat: no-repeat;
-    aspect-ratio: 1920 / 1080;
-    height:auto !important;
 }
 
 
@@ -696,7 +697,7 @@ font-size: 14px;
     -webkit-line-clamp: 6; /* approx 300 words visually */
     -webkit-box-orient: vertical;
     overflow: hidden;
-    width: 70%;
+    width: 90%;
 
     text-align: center;
     margin: 0 auto;
@@ -1544,10 +1545,14 @@ margin-left: -15px;
 @media  (max-width: 785px)  {
 
 
+    body {
+    
+        background-size: contain !important;
+        max-height:fit-content !important ;
+        background-color: #000;
+    
+        }
 
-#home{
-    min-height: 100vh;
-}
     #mainNav .navbar-nav {
         flex-direction: column !important;
     }
@@ -1569,18 +1574,13 @@ margin-left: -15px;
 
 
 
-    body {
-    
-        background-size: contain;
-    
-        }
+    .main-banner , #about{
 
-    .main-banner{
-
-        background-size: contain;
+        background-size: contain ;
         max-height:fit-content ;
-        
+
         }
+
        
 
     .section {
@@ -1675,9 +1675,16 @@ margin-left: -15px;
     .parallaxieCarousel,
     .main-banner,
     .shop,
-    #team {
+    #team,
+    #about.parallaxie {
+        background-repeat: no-repeat;
+        
+        background-color: #000;
+        max-height:fit-content ;
         background-attachment: scroll !important;
         background-position: center center !important;
+        
+
     }
 
     .team-member {
