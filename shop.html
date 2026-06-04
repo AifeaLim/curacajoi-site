@@ -66,7 +66,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="team.html">TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">ÜBER</a></li>
                     <li class="nav-item"><a class="nav-link" href="angebote.html">ANGEBOTE</a></li>
                     <li class="nav-item"><a class="nav-link" href="kalendar.html">KALENDER</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
@@ -90,9 +90,19 @@
 
     <section id="shop" class="shop-section">
         <h2>SHOP</h2>
+<div>
+        <p>Der SHOP fing eigentilch mit meinem neuen Gartenbuch EIN PARADIES AUS ESSBAREN STAUDEN an, <br>
+          schnell hatte ich die Idee noch etwas zusätzlch zum Buch zu machen, und als sich die Zusammenarbeit mit der malaysischen 
+          <br>
+          Designerin Hantze entwickelte, sprudelten wir beide vor Ideen für inspirierende T-Shirts vorwiegend mit essbaren Blüten.
+          Schaut gerne rein, ich bin gespannt ob es Euch die Sachen gefallen!</p>
+          <br>
 
+          <a href="" target="_blank" class="btn">More Information</a>
+<br>
+        </div>
 
-        <div class="container-fluid">
+        <div class="shop">
             <h3>Produkte</h3>
 
     <div id='collection-component-1775772991144'></div>
@@ -116,9 +126,19 @@
     <!-- FOOTER -->
     <div class="copyrights">
       <div class="footer-left">
+        <div class="language-switcher">
+          <a href="#" data-lang="de">GER 🇩🇪</a>
+          <span>|</span>
+          <a href="#" data-lang="en">EN 🇬🇧</a>
+          <span>|</span>
+          <a href="#" data-lang="it">IT 🇮🇹</a>
+        </div>
         <div class="spacer"></div>
+    
         <p class="footer-company-name">CURA CAJOI © 2026</p>
-        <a class="legal" href="legal.html">Legal Notice</a>
+    
+        <a class="legal" href="legal.html">IMPRESSUM</a>
+
       </div>
     </div>
 
@@ -511,6 +531,20 @@ document.querySelector(".close").onclick = function() {
     document.getElementById("imageModal").style.display = "none";
 };
     </script>
+
+<script>
+  document.querySelectorAll(".language-switcher a").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+  
+      const lang = a.dataset.lang;
+      const currentFile = window.location.pathname.split("/").pop();
+  
+      const newPath = "/" + lang + "/" + currentFile;
+      window.location.href = newPath;
+    });
+  });
+  </script>
 
 
 </body>
