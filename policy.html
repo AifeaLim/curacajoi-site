@@ -315,13 +315,23 @@ Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail.
 
 
     <!-- Footer -->
-   <div class="copyrights">
-  <div class="footer-left">
-    <div class="spacer"></div>
-    <p class="footer-company-name">CURA CAJOI © 2026</p>
-    <a class="legal" href="legal.html">Legal Notice</a>
-  </div>
-</div>
+    <div class="copyrights">
+        <div class="footer-left">
+          <div class="language-switcher">
+            <a href="#" data-lang="de">GER 🇩🇪</a>
+            <span>|</span>
+            <a href="#" data-lang="en">EN 🇬🇧</a>
+            <span>|</span>
+            <a href="#" data-lang="it">IT 🇮🇹</a>
+          </div>
+          <div class="spacer"></div>
+      
+          <p class="footer-company-name">CURA CAJOI © 2026</p>
+      
+          <a class="legal" href="legal.html">IMPRESSUM</a>
+  
+        </div>
+      </div>
 
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius">
@@ -351,7 +361,19 @@ Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail.
     <!-- iCal.js (optional if you use it) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ical.js/1.4.0/ical.min.js"></script>
 
-    
+    <script>
+        document.querySelectorAll(".language-switcher a").forEach(a => {
+          a.addEventListener("click", e => {
+            e.preventDefault();
+        
+            const lang = a.dataset.lang;
+            const currentFile = window.location.pathname.split("/").pop();
+        
+            const newPath = "/" + lang + "/" + currentFile;
+            window.location.href = newPath;
+          });
+        });
+        </script>
 
 
 
