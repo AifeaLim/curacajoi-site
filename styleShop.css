@@ -261,6 +261,12 @@ iframe.goog-te-menu-frame {
 /*------------------------------------------------------------------
     SHOP
 -------------------------------------------------------------------*/
+
+.shop {
+    margin-top: 40px;
+}
+
+
 .product-card , .customproduct-card{
     border-radius: 20px;
 
