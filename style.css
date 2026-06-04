@@ -278,7 +278,7 @@ font-size: 14px;
 }
 
 #mainNav .nav-link:hover {
-    color: #595959;
+    color: #000000;
 }
 
 
@@ -1244,15 +1244,28 @@ margin-left: -15px;
     padding: 20px;
     box-sizing: border-box;
   }
+
+  .copyrights span {
+    color: #ffffff;
+    display: inline;
+}
   
   .footer-left {
     display: flex;
     align-items: center;
     width: 100%;
+    gap: 10px;
   }
   
   .spacer {
     flex: 1;
+  }
+
+  .language-switcher a {
+    margin: 0;
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "AvenirLight";
   }
   
   .footer-company-name {
