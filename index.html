@@ -129,23 +129,7 @@
 
 
     <!-- Footer -->
-    <div class="copyrights">
-      <div class="footer-left">
-        <div class="language-switcher">
-          <a href="#" data-lang="de">GER 🇩🇪</a>
-          <span>|</span>
-          <a href="#" data-lang="en">EN 🇬🇧</a>
-          <span>|</span>
-          <a href="#" data-lang="it">IT 🇮🇹</a>
-        </div>
-        <div class="spacer"></div>
-    
-        <p class="footer-company-name">CURA CAJOI © 2026</p>
-    
-        <a class="legal" href="legal.html">IMPRESSUM</a>
-
-      </div>
-    </div>
+    <div id="footer"></div>
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius">
         <div class="img">
@@ -548,6 +532,16 @@ slider.addEventListener('mousemove', (e) => {
       window.location.href = mailtoLink;
   });
   </script>
+
+<div id="footer"></div>
+
+<script>
+fetch("/components/footer.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("footer").innerHTML = html;
+  });
+</script>
 
 <script>
   document.querySelectorAll(".language-switcher a").forEach(a => {
