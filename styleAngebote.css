@@ -736,7 +736,8 @@ padding-top:4px;
 
 .Unterkunft-content img {
     display: flex;
-    width: 70vh;
+    width: 100vh;
+    height: auto;
     border-radius: 12px;
 }
 
