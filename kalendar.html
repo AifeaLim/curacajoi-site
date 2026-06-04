@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="team.html">TEAM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">ÜBER</a></li>
                     <li class="nav-item"><a class="nav-link" href="angebote.html">ANGEBOTE</a></li>
                     <li class="nav-item"><a class="nav-link" href="kalendar.html">KALENDER</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">SHOP</a></li>
@@ -107,9 +107,21 @@
 
     <!-- FOOTER -->
     <div class="copyrights">
-        <div class="footer-left">
-            <p class="footer-company-name">CURA CAJOI © 2026</p>
+      <div class="footer-left">
+        <div class="language-switcher">
+          <a href="#" data-lang="de">GER 🇩🇪</a>
+          <span>|</span>
+          <a href="#" data-lang="en">EN 🇬🇧</a>
+          <span>|</span>
+          <a href="#" data-lang="it">IT 🇮🇹</a>
         </div>
+        <div class="spacer"></div>
+    
+        <p class="footer-company-name">CURA CAJOI © 2026</p>
+    
+        <a class="legal" href="legal.html">IMPRESSUM</a>
+
+      </div>
     </div>
 
     
@@ -298,6 +310,20 @@ scrollElements.forEach(el => observer.observe(el));
   }
   
   init();
+  </script>
+
+<script>
+  document.querySelectorAll(".language-switcher a").forEach(a => {
+    a.addEventListener("click", e => {
+      e.preventDefault();
+  
+      const lang = a.dataset.lang;
+      const currentFile = window.location.pathname.split("/").pop();
+  
+      const newPath = "/" + lang + "/" + currentFile;
+      window.location.href = newPath;
+    });
+  });
   </script>
   
 </body>
