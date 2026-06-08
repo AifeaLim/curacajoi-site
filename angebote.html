@@ -217,7 +217,10 @@
                  Zeit relevant und nützlich sind – und natürlich auch zu Themen, die uns selbst wirklich begeistern..<br><br></h4>
         </div>
 
-        <div class="workshops-info">   
+        <div class="workshops-info" id="workshops-container">
+        </div>
+
+        <!-- <div class="workshops-info">   
                 <div class="workshops-content">
                     <img src="https://res.cloudinary.com/dijbbw7lu/image/upload/v1780592388/workshops01_efasdn.png">
                     <h3>Die Lichtwurzel <br> Die Nahrungspflanze der Zukunft</h3>
@@ -248,27 +251,22 @@
 
                     
                 </div> 
-        </div>
+        </div> -->
         
     </section>
 
-    <section id="unterkunft" class="parallaxie" style="background-image: url('https://res.cloudinary.com/dijbbw7lu/image/upload/v1780592392/carousel04_c8zuzz.png');">
+    <section id="unterkunft" class="parallaxie" style="background-image: url('https://res.cloudinary.com/dijbbw7lu/image/upload/v1780936612/carousel04_yzkoud.png');">
        
 
         <div class="section-title text-center scroll-float">
             <h2>Unterkunft</h2>
              </div>
 
-
-
-      <div class="Unterkunft-grid">
-
             <div class="Unterkunft-content">
                 <div>
               <img src="https://res.cloudinary.com/dijbbw7lu/image/upload/v1780592408/carousel01_sdj95h.jpg" class="tent-img">
             </div>
             </div>
-          </div> 
     
     </section>
       
@@ -645,6 +643,60 @@ scrollElements.forEach(el => observer.observe(el));
         window.location.href = newPath;
       });
     });
+    </script>
+
+
+<script>
+    async function getWorkshops() {
+        const res = await fetch(
+          "https://opensheet.elk.sh/1hO_hHLDsapkubvSUFM5OMzvpfow2R5s9vPtCH2sXIRY/WORKSHOPS"
+        );
+    
+        return await res.json();
+    }
+    
+    function renderWorkshops(workshops) {
+    
+        const container = document.getElementById("workshops-container");
+    
+        if (!workshops.length) {
+            container.innerHTML = "<p>Keine Workshops verfügbar.</p>";
+            return;
+        }
+    
+        container.innerHTML = workshops.map(workshop => `
+            <div class="workshops-content">
+                <img src="${workshop.Image}" alt="${workshop.Title}">
+    
+                <h3>${workshop.Title}</h3>
+    
+                <br>
+    
+                <p>${workshop.Description}</p>
+    
+                <br>
+    
+                <p>
+                    <span class="italic-bold">
+                        ${workshop.Date}
+                    </span>
+                </p>
+            </div>
+        `).join("");
+    }
+    
+    async function initWorkshops() {
+    
+        const data = await getWorkshops();
+    
+        const workshops = data.filter(
+            item => item.Published === "TRUE"
+        );
+    
+        renderWorkshops(workshops);
+    }
+    
+    initWorkshops();
     </script>
 
 
