@@ -106,14 +106,14 @@
     </section>
 
     <!-- FOOTER -->
-    <div class="copyrights">
+    <div id=footer class="copyrights">
       <div class="footer-left">
         <div class="language-switcher">
-          <a href="#" data-lang="de">GER 🇩🇪</a>
+          <a class="en" href="EN_kalendar.html">EN</a>
           <span>|</span>
-          <a href="#" data-lang="en">EN 🇬🇧</a>
+          <a class="de" href="kalendar.html">DE</a>
           <span>|</span>
-          <a href="#" data-lang="it">IT 🇮🇹</a>
+          <a class="it" href="IT_kalendar.html">IT</a>
         </div>
         <div class="spacer"></div>
     
@@ -312,7 +312,7 @@ scrollElements.forEach(el => observer.observe(el));
   init();
   </script>
 
-<script>
+<!-- <script>
   document.querySelectorAll(".language-switcher a").forEach(a => {
     a.addEventListener("click", e => {
       e.preventDefault();
@@ -324,7 +324,7 @@ scrollElements.forEach(el => observer.observe(el));
       window.location.href = newPath;
     });
   });
-  </script>
+  </script> -->
   
 </body>
 </html>
