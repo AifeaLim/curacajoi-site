@@ -50,7 +50,7 @@ body {
     line-height: 1.80857;
 }
 
-#home, #dance, #zum, #workshops {
+#home, #dance, #zum, #workshops{
     position: relative;
 }
 
@@ -286,8 +286,9 @@ font-size: 14px;
     width: 100%;
 }
 
-.outro{
-    padding-top: 40px;
+#info .outro{
+    padding-top: 60px;
+    text-align: center;
 }
 
 #info {
@@ -742,7 +743,7 @@ padding-top:4px;
 
 .Unterkunft-content img {
     display: flex;
-    width: 60vh;
+    width: 40vh;
     height: auto;
     border-radius: 12px;
 }
