@@ -637,33 +637,38 @@ slider.addEventListener('mousemove', (e) => {
   });
   </script>
 
-
 <script>
   document.getElementById("newsletter-form").addEventListener("submit", async function(e) {
     e.preventDefault();
-  
+
     const email = e.target.querySelector("input").value;
-  
-    const response = await fetch("https://api.brevo.com/v3/contacts", {
-      method: "POST",
-      headers: {
-        "api-key": "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",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [5], // your list ID in Brevo
-        updateEnabled: true
-      })
-    });
-  
-    if (response.ok) {
-      alert("Subscribed successfully!");
-    } else {
+
+    try {
+      const response = await fetch(
+        "https://brevo-newsletter.nursofeaiwani.workers.dev",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: email
+          })
+        }
+      );
+
+      if (response.ok) {
+        alert("Subscribed successfully!");
+        e.target.reset();
+      } else {
+        alert("Something went wrong");
+      }
+    } catch (error) {
+      console.error(error);
       alert("Something went wrong");
     }
   });
-  </script>
+</script>
 
 <script>
   document.querySelectorAll(".language-switcher a").forEach(a => {
