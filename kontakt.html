@@ -118,7 +118,7 @@
                     <div class="contact_form">
                         <div id="message"></div>
                         
-                        <form id="contactForm" action="mailto:nursofeaiwani@gmail.com" method="POST" enctype="text/plain">
+                        <form id="contactForm">
                             <div class="form-group">
                                 <p2>First Name</p2>
                                 <input class="form-control" name="firstName" type="text" required>
@@ -613,29 +613,7 @@ slider.addEventListener('mousemove', (e) => {
     });
     </script>
 
-<script>
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-  
-      const firstName = document.querySelector('[name="firstName"]').value;
-      const lastName = document.querySelector('[name="lastName"]').value;
-      const email = document.querySelector('[name="email"]').value;
-      const message = document.querySelector('[name="message"]').value;
-  
-      const subject = `Contact Form Message from ${firstName} ${lastName}`;
-      const body = `
-  Name: ${firstName} ${lastName}
-  Email: ${email}
-  
-  Message:
-  ${message}
-      `;
-  
-      const mailtoLink = `mailto:nursofeaiwani@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-      window.location.href = mailtoLink;
-  });
-  </script>
+
 
 <script>
   document.getElementById("newsletter-form").addEventListener("submit", async function(e) {
