@@ -737,19 +737,7 @@ slider.addEventListener('mousemove', (e) => {
     });
 </script>
 
-<script>
-  document.querySelectorAll(".language-switcher a").forEach(a => {
-    a.addEventListener("click", e => {
-      e.preventDefault();
-  
-      const lang = a.dataset.lang;
-      const currentFile = window.location.pathname.split("/").pop();
-  
-      const newPath = "/" + lang + "/" + currentFile;
-      window.location.href = newPath;
-    });
-  });
-  </script>
+
 
 
 </body>
