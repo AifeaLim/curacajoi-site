@@ -170,13 +170,14 @@
 
     <!-- Footer -->
     <div id=footer class="copyrights">
-      <div class="language-switcher">
-        <a class="en" href="EN_kontakt.html">EN</a>
-        <span>|</span>
-        <a class="de" href="kontakt.html">DE</a>
-        <span>|</span>
-        <a class="it" href="IT_kontakt.html">IT</a>
-      </div>
+      <div class="footer-left">
+        <div class="language-switcher">
+          <a class="en" href="EN_kalendar.html">EN</a>
+          <span>|</span>
+          <a class="de" href="kalendar.html">DE</a>
+          <span>|</span>
+          <a class="it" href="IT_kalendar.html">IT</a>
+        </div>
         <div class="spacer"></div>
     
         <p class="footer-company-name">CURA CAJOI © 2026</p>
@@ -185,6 +186,7 @@
 
       </div>
     </div>
+   
 
     
     <a href="#" id="scroll-to-top" class="dmtop global-radius">
@@ -736,19 +738,7 @@ slider.addEventListener('mousemove', (e) => {
     });
 </script>
 
-<script>
-  document.querySelectorAll(".language-switcher a").forEach(a => {
-    a.addEventListener("click", e => {
-      e.preventDefault();
-  
-      const lang = a.dataset.lang;
-      const currentFile = window.location.pathname.split("/").pop();
-  
-      const newPath = "/" + lang + "/" + currentFile;
-      window.location.href = newPath;
-    });
-  });
-  </script>
+
 
 
 </body>
