@@ -56,6 +56,14 @@ body {
     z-index: 1;
 }
 
+#homemobile{
+    display: none;
+}
+
+#home {
+    display: block;
+}
+
 
 
 #intro {
@@ -1257,11 +1265,10 @@ margin-left: -15px;
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 10px;
   }
   
   .spacer {
-    flex: 1;
+    flex: 0.5;
   }
 
   .language-switcher a {
@@ -1692,7 +1699,7 @@ margin-left: -15px;
     .main-banner,
     .shop,
     #team,
-    #about.parallaxie {
+    #about.parallaxie{
         background-repeat: no-repeat;
         
         background-color: #000;
@@ -1701,6 +1708,17 @@ margin-left: -15px;
         background-position: center center !important;
         
 
+    }
+
+    #homemobile {
+        display: block;
+        background-repeat: no-repeat;
+        
+        background-color: #000;
+        max-height:fit-content ;
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        
     }
 
     .team-member {
@@ -1855,7 +1873,7 @@ margin-left: -15px;
         
         }
 
-        .team-full{
+        .team-full, #home{
             display:none;
         }
 
